@@ -18,11 +18,11 @@
 <section class="ftco-section ftco-no-pb">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(frontend/images/about.jpg);">
+      <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(frontend/images/house_rent.jpg);">
       </div>
       <div class="col-md-6 wrap-about pl-md-5 ftco-animate">
         <div class="heading-section">
-          <h2 class="mb-4">Welcome To Findstate A Real Estate Agency</h2>
+          <h2 class="mb-4">Welcome To House Rental Mandalay Agency</h2>
 
           <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
           <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
