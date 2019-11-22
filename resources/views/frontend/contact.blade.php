@@ -24,19 +24,19 @@
                     <div class="icon mb-3 d-flex align-items-center justify-content-center">
                         <span class="icon-map-o"></span>
                     </div>
-                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                    <p><span>Address:</span> 40th Street, 70*71,Mandalay</p>
                   </div>
                   <div class="col-md-4 text-center py-4">
                     <div class="icon mb-3 d-flex align-items-center justify-content-center">
                         <span class="icon-mobile-phone"></span>
                     </div>
-                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    <p><span>Phone:</span> <a href="tel://1234567920">09788097388</a></p>
                   </div>
                   <div class="col-md-4 text-center py-4">
                     <div class="icon mb-3 d-flex align-items-center justify-content-center">
                         <span class="icon-envelope-o"></span>
                     </div>
-                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">akl945@gmail.com</a></p>
                   </div>
                 </div>
           </div>
@@ -62,7 +62,13 @@
             </form>
           </div>
           <div class="col-md-6 align-items-stretch d-flex">
-                <div id="map" class="bg-white border"></div>
+                <!-- <div id="map" class="bg-white border"> -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.313051968401!2d96.09544332844669!3d21.960945108979868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30cb6d0d618afde7%3A0x9b2a1e81fc171bb0!2sMyanmar%20IT%20Consulting!5e0!3m2!1sen!2smm!4v1574416540968!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="">
+                    
+                  </iframe>" 
+                 
+                    
+                  
           </div>
         </div>
       </div>
