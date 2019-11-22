@@ -17,41 +17,34 @@
     <section class="ftco-section ftco-agent">
         <div class="container">
         <div class="row">
-            <div class="col-md-3 ftco-animate">
+            <div class="col-md-4 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/thandar.jpg" class="img-fluid" alt="Colorlib Template">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3><a href="">Thandar Tun</a></h3>
+                            <h3><a href="">Chue Eain San</a></h3>
+                            <a href="https://www.facebook.com/chanmyae.thiri.1742000"><span class="icon-facebook ftcon-animate"></i></span></a>
                         </div>
                     </div>
             </div>
 
-            <div class="col-md-3 ftco-animate">
+            
+            <div class="col-md-4 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/nan.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">Nan Yu Yu Maw</a></h3>
-                        </div>
-                    </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <div class="agent">
-                        <div class="img">
-                            <img src="frontend/images/su.png" class="img-fluid" alt="Colorlib Template">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
                             <h3><a href="properties.html">Su Su Hlaing</a></h3>
+                            <h3>Co-Leader</h3>
                         </div>
                     </div>
             </div>
-            <div class="col-md-3 ftco-animate">
+            <div class="col-md-4 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/pa.jpg" class="img-fluid" alt="Colorlib Template">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
                             <h3><a href="properties.html">Win Pa Pa Theint</a></h3>
@@ -59,13 +52,14 @@
                     </div>
             </div>
 
+            
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/team-5.jpg" class="img-fluid" alt="Colorlib Template">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3><a href="properties.html">Ben Ford</a></h3>
+                            <h3><a href="properties.html">Chue Ei San</a></h3>
                         </div>
                     </div>
             </div>
@@ -75,30 +69,31 @@
                             <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3><a href="properties.html">John Cooper</a></h3>
+                            <h3><a href="properties.html">Than Toe Aung</a></h3>
+                        </div>
+                    </div>
+            </div>
+             <div class="col-md-3 ftco-animate">
+                <div class="agent">
+                        <div class="img">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
+                        </div>
+                        <div class="desc">
+                            <h3><a href="properties.html">Thandar Tun</a></h3>
                         </div>
                     </div>
             </div>
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/team-7.jpg" class="img-fluid" alt="Colorlib Template">
+                            <img src="frontend/images/team-6.jpg" class="img-fluid" alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3><a href="properties.html">Janice Clinton</a></h3>
+                            <h3><a href="properties.html">Chue Eain San</a></h3>
                         </div>
                     </div>
             </div>
-            <div class="col-md-3 ftco-animate">
-                <div class="agent">
-                        <div class="img">
-                            <img src="frontend/images/team-8.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">Eunice Henceford</a></h3>
-                        </div>
-                    </div>
-            </div>
+            
         </div>
         
     </section>
