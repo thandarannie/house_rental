@@ -3283,7 +3283,6 @@
             "time": "2016-01-20T08:20:44+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "laravel/ui",
             "version": "v1.1.1",
             "source": {
@@ -3341,8 +3340,6 @@
             "time": "2019-10-11T12:16:52+00:00"
         },
         {
-=======
->>>>>>> susuhlaing
             "name": "mockery/mockery",
             "version": "1.2.4",
             "source": {
