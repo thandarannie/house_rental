@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "a5669dbb4e274f449d66914c9d62779a",
+    "content-hash": "fa503b104f700e4337a4bf209a56bc8a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3282,6 +3283,7 @@
             "time": "2016-01-20T08:20:44+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/ui",
             "version": "v1.1.1",
             "source": {
@@ -3339,6 +3341,8 @@
             "time": "2019-10-11T12:16:52+00:00"
         },
         {
+=======
+>>>>>>> susuhlaing
             "name": "mockery/mockery",
             "version": "1.2.4",
             "source": {
