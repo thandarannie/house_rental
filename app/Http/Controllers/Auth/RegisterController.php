@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Image;
 
 class RegisterController extends Controller
 {
@@ -64,23 +66,30 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        /*if ($data['usertype']=='User') {
-            $usertype='user';
-        }elseif ($data['usertype']=='Owner') {
-            $usertype='owner';
-        }*//*else{
-            $usertype='admin';
-        }*/
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'nrc'=>$data['nrc'],
-            'image'=>$data['image'],
-            'password' => Hash::make($data['password']),
+    protected function register(Request $request){
+        $request->validate([
+            'name' => 'required|min:5',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+            'nrc' => 'required',
+            'image' => 'required|mimes:jpeg, jpg, bmp, png'
         ]);
-        $user->assignRole('admin');
-        return $user;
+
+        if ($request->image) {
+            $file_name = time() . '.' . $request->image->getClientOriginalExtension();
+            $file_path = '/storage/image/' . $file_name;
+            $image = Image::make($request->image)->save(public_path($file_path));
+        }
+        // dd($image);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'nrc' => $request->nrc,
+            'image' => $file_path
+        ]);
+        $this->guard()->login($user);
+        return redirect()->route('admin');
     }
 }
