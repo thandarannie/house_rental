@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Township;
 
 class TownshipController extends Controller
 {
@@ -13,7 +14,7 @@ class TownshipController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -23,7 +24,8 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        //
+        
+    }
     }
 
     /**

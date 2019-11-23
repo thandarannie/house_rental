@@ -4,7 +4,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
     </button>
-
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -14,18 +13,12 @@
             Township
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Aung Myay Thar Zan</a>
-            <a class="dropdown-item" href="#">Chan Aye Thar Zan</a>
-            <a class="dropdown-item" href="#">Mahar Aung Myay</a>
-            <a class="dropdown-item" href="#">Chan Mya Thar Si</a>
-            <a class="dropdown-item" href="#">Pyi Gyi Ta Kon</a>
+            @foreach($townships as $row)
+            <a class="dropdown-item" href="#">{{$row->name}}</a>
+            @endforeach
           </div>
         </li>
-
         <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-
-        
-        
         <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="/agent" class="nav-link">Our Team</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>

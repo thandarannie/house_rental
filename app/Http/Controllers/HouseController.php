@@ -18,9 +18,7 @@ class HouseController extends Controller
 
     public function index()
     {
-         $house = House::all();
-        //datas
-        return view('frontend.create');
+         
     }
 
     /**
@@ -41,25 +39,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //Validation
-        //File Upload if file exist
-        //Store Data
-        $house = new House;
-        $house->user_id= request('name'); 
-        $house->township_id = request('township');
-        $house->type_id = request('type');
-        $house->title = request('title');
-        $house->area= request('area'); 
-        $house->price = request('price');
-        $house->room = request('room');
-        $house->location= request('location'); 
-        $house->image = request('image');
-        $house->phone = request('phone');
-        $house->status = request('status');
-        $house->description = request('des');
-        $house->save();
-        return redirect()->route('create.index');
-        //Redirect
+
     }
 
     /**

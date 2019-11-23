@@ -1,11 +1,9 @@
 <?php
 
 //house rental home page
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('frontend/index');
-});
-
-Route::resource('/create','HouseController');
+});*/
 
 Route::get('/about', function () {
     return view('frontend/about');
@@ -30,14 +28,7 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
-Route::get('/detail', function () {
-    return view('frontend/detail');
-});
+Route::resource('/','OwnerController');
+Route::resource('/owner','OwnerController');
+Route::resource('/rent','RentController');
 
-Route::get('/edit', function () {
-    return view('owner/edit');
-});
-
-Route::get('/rent', function () {
-    return view('owner/rent');
-});

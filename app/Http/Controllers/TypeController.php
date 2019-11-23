@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Type;
 
 class TypeController extends Controller
 {
@@ -23,7 +24,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        $types=Type::all();
+        return view('owner.create',compact('types'));
     }
 
     /**
