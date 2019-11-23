@@ -13,6 +13,12 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
+        $permissions=['manage-house','manage-rent','manage-township','manage-type,manage-user'];
+        foreach ($permissions as $permission) 
+        {
+            Permission::create(['name'=>$permission]);
+            # code...
+        }
             
     }
 }

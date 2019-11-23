@@ -8,18 +8,10 @@ Route::resource('/owner','OwnerController');
 Route::resource('/township','TownController');
 
 
-
 Route::get('/about', function () {
     return view('frontend/about');
 });
 
-//backend
-Auth::routes();
-Route::get('/admin', 'HomeController@admin')->name('admin');
-
-/*Route::get('/admin', function () {
-    return view('backend/index');
-});*/
 Route::get('/service', function () {
     return view('frontend/service');
 });
@@ -41,3 +33,19 @@ Route::get('/rent', function () {
 });
 
 
+/////////backend/////////////
+
+Auth::routes();
+Route::get('/admin', 'HomeController@admin')->name('admin');
+Route::resource('/rentlists', 'RentListsController');
+Route::resource('/housedetails','HouseController');
+Route::get('/userposts', function () {
+    return view('backend/userposts');
+});
+Route::resource('/townshipdetails','TownshipController');
+/*Route::get('/dd', function () {
+    return view('backend/addtownship');
+});*/
+/*Route::get('/admin', function () {
+    return view('backend/index');
+});*/

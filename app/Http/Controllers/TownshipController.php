@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Township;
 
 class TownshipController extends Controller
 {
@@ -13,7 +14,8 @@ class TownshipController extends Controller
      */
     public function index()
     {
-        //
+        $township = Township::all();
+         return view('backend.townshipdetails',compact('township'));
     }
 
     /**
@@ -35,7 +37,10 @@ class TownshipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $township = new Township;
+        $township->name = request('name'); 
+         $township->save();
+        return redirect()->route('townshipdetails.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class TownshipController extends Controller
      */
     public function show($id)
     {
-        //
+         
     }
 
     /**

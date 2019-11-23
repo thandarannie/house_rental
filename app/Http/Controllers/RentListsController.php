@@ -1,28 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Rent;
 use Illuminate\Http\Request;
-use App\House;
-use App\Township;
 
-class TownController extends Controller
+class RentListsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    /*public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
-
     public function index()
     {
-         $house = House::all();
-        //datas
-        return view('backend.housedetails');
+        $house = Rent::all();
+        return view('backend.rent');
     }
 
     /**
@@ -32,8 +24,7 @@ class TownController extends Controller
      */
     public function create()
     {
-        $townships=Township::all();
-        return view('frontend_layouts.nav',compact('townships'));
+        //
     }
 
     /**
@@ -55,8 +46,7 @@ class TownController extends Controller
      */
     public function show($id)
     {
-        $houses=House::where('township_id',$id)->get();
-        return view('township.index',compact('houses'));
+        //
     }
 
     /**
