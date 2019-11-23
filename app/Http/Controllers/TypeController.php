@@ -23,7 +23,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        $housetypes=Type::all();
+        return view('owner.create',compact('housetypes'));
     }
 
     /**

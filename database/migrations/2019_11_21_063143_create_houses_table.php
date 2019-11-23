@@ -22,8 +22,8 @@ class CreateHousesTable extends Migration
             $table->string('area');
             $table->decimal('price',10,2);
             $table->string('room');
-            $table->string('street');
-            $table->string('hno');
+            $table->string('location');
+
             $table->string('image');
             $table->string('phone')->unique();
             $table->boolean('status')->default(false);

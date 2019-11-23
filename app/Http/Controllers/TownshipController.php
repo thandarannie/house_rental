@@ -23,7 +23,8 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        //
+        $townships=Township::all();
+        return view('owner.create',compact('townships'));
     }
 
     /**

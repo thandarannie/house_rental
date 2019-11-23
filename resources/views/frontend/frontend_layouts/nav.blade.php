@@ -14,11 +14,10 @@
             Township
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Aung Myay Thar Zan</a>
-            <a class="dropdown-item" href="#">Chan Aye Thar Zan</a>
-            <a class="dropdown-item" href="#">Mahar Aung Myay</a>
-            <a class="dropdown-item" href="#">Chan Mya Thar Si</a>
-            <a class="dropdown-item" href="#">Pyi Gyi Ta Kon</a>
+            @foreach($townships as $township)
+            <a class="dropdown-item" href="{{route('township.show',$township->id)}}">{{$township->name}}</a>
+            @endforeach
+            
           </div>
         </li>
 
