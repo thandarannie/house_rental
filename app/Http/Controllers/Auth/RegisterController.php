@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\Console\Input;
 
 class RegisterController extends Controller
 {
@@ -52,7 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
              'nrc' => ['required', 'string'],
-             'image' => ['required','string','mimes:jpeg,jpg,png'],
+             'image' => ['required','mimes:jpeg,jpg,png'],
              /*'usertype'=>['required','string'],*/
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -73,13 +74,38 @@ class RegisterController extends Controller
         }*//*else{
             $usertype='admin';
         }*/
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'nrc'=>$data['nrc'],
-            'image'=>$data['image'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+
+
+        if ($data['image']) {
+            $photo=$data['image'];
+            $name=time().'.'.$photo->getCLientOriginalExtension();
+            $photo->move(public_path().'/storage/image/',$name);
+            $photo='/storage/image/'.$name;
+        }else{
+            $photo='';
+        }
+
+        // dd($photo);      
+
+
+        
+        // $user = User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'nrc'=>$data['nrc'],
+        //     'image'=> "/storage/image/1574423163.jpg",
+        //     'password' => Hash::make($data['password']),
+        // ]);
+        $user = new User;
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->nrc = $data['nrc'];
+        // $user->image = 'temp.jpg';
+        $user->password = Hash::make($data['password']);
+        $user->save();
+
+        dd($user);
         $user->assignRole('admin');
         return $user;
     }
