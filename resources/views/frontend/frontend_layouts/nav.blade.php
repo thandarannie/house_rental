@@ -29,6 +29,54 @@
         <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="/agent" class="nav-link">Our Team</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+
+
+        @guest 
+            <!--if not login --> <!-- Middleware/Redirect --> <!-- Kernel.php -->
+           <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">Login</a>
+          </li>
+          <!-- resource/views/auth/login.blade.php -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">Sign up</a>
+          </li>
+
+
+          @else
+
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{Auth::user()->name}}
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    @hasrole('owner')
+     
+    <a class="dropdown-item" href="{{route('post.create',Auth::id())}}">Post</a>
+
+    @endhasrole
+
+    <a class="dropdown-item" href="{{route('user.edit',Auth::id())}}">Profile</a>
+
+
+    <a class="dropdown-item" href="{{ route('logout') }}"
+      onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();">Logout</a>
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" 
+      style="display: none;">
+
+      @csrf
+      </form>
+
+   </div>
+   </li>
+
+
+   @endguest
+
+
       </ul>
     </div>
   </div>
