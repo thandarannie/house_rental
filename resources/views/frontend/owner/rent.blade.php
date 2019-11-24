@@ -1,8 +1,8 @@
 @extends('template')
 @section('content')
 <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
+  <!-- <div class="overlay"></div>
+  <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
@@ -23,33 +23,29 @@
                         
                         <div class="row offset-3">
                             <div class="col-lg-6 align-items-end">
-                                <div class="form-group">
-                                    <label>Renter Name:</label>
-                                    <input type="text" name="name" class="form-control w-50">
-                                </div>
                                 
                                 <div class="form-group">
                                     <label>FROM DATE</label>
-                                    <input type="date" name="from" class="form-control w-50">
+                                    <input type="date" name="from" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>TO DATE</label>
-                                    <input type="date" name="to" class="form-control w-50">
+                                    <input type="date" name="to" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>ADDRESS</label>
-                                    <input type="text" name="address" class="form-control w-50">
+                                    <input type="text" name="address" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>PHONE</label>
-                                    <input type="number" name="phone" class="form-control w-50">
+                                    <input type="number" name="phone" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea name="message" class="form-control w-50"></textarea>
+                                    <textarea name="message" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="" value="Save" class="btn btn-secondary  w-25 ">
+                                    <input type="submit" name="" value="Save" class="btn btn-primary w-25 ">
                                 </div>
                                 
                             </div>   

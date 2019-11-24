@@ -1,8 +1,19 @@
 @extends('template')
 @section('content')
-<div class="hero-wrap" style="background-image: url('frontend/images/h2.jpeg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<div class="hero-wrap" style="background-image: url('{{asset('frontend/images/h2.jpeg')}}');" data-stellar-background-ratio="0.5">
+  <!-- <div class="overlay"></div>
+  <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text justify-content-center align-items-center">
         <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
@@ -34,11 +45,20 @@
                                 <div class="form-group">
                                     <label>Title:</label>
                                     <input type="text" name="title" class="form-control w-50">
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label>Township:</label>
                                     <select name="township" class="form-control w-50">
                                         @foreach($townships as $row)
+                                        <option value="">{{$row->name}}</option>
+                                        @endforeach  
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>House Type:</label>
+                                    <select name="housetype" class="form-control w-50">
+                                        @foreach($types as $row)
                                         <option value="">{{$row->name}}</option>
                                         @endforeach  
                                     </select>
@@ -52,14 +72,6 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 align-items-end">
-                                <div class="form-group">
-                                    <label>House Type:</label>
-                                    <select name="housetype" class="form-control w-50">
-                                        @foreach($types as $row)
-                                        <option value="">{{$row->name}}</option>
-                                        @endforeach  
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label>Phone:</label>
                                     <input type="text" name="phone" class="form-control w-50">
@@ -78,14 +90,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Desc:</label>
-                                    <input type="text" name="desc" class="form-control w-50">
+                                    <textarea name="desc" class="form-control w-50"> </textarea>
                                 </div>
-                                
-                            </div>   
-
-                                <input type="submit" name="" value="Save" class="btn btn-warning form-control w-25">
+                            </div>  
                         </div> 
-
+                        <center><div class="form-group">
+                            <input type="submit" name="" value="Save" class="btn btn-warning form-control w-25 text-primary">
+                        </div></center> 
                     </form>
                 </div>
             </div>

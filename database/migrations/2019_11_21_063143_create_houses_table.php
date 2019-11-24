@@ -24,7 +24,7 @@ class CreateHousesTable extends Migration
             $table->string('room');
             $table->string('street');
             $table->string('hno');
-            $table->string('image');
+            $table->string('image',80);
             $table->string('phone')->unique();
             $table->boolean('status')->default(false);
             $table->text('description');

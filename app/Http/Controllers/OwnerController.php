@@ -38,16 +38,22 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        $request ->validate([
+                "image" => 'required',
+                'image.*'=>'image|mimes:jpeg,png,jpg'
+                
+                
+
+            ]);
 
 
         if ($request-> hasfile('image')) {
-            foreach ($request->file('image') as $image) {
-
-                $name=$image->getClientOriginalName();
-                $image->move(public_path().'/storage/image/',$name);
-                $data[]=$name;
-            }
-                
+                $photo=$request->file('image');
+                $name=time().'.'.$photo->getClientOriginalExtension();
+                $photo->move(public_path().'/storage/image/',$name);
+                $photo='storage/image/'.$name;
+            }else{
+                $photo='';
             }
             //dd($photo);
 
@@ -62,7 +68,7 @@ class OwnerController extends Controller
             $house->room = request('room');
             $house->street= request('street');
             $house->hno = request('no');
-            $house->image = json_encode($data);
+            $house->image = $photo;
             $house->phone= request('phone');
             $house->description= request('desc');
             $house->save();

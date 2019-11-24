@@ -24,13 +24,6 @@ Route::resource('/','OwnerController');
 Route::resource('/owner','OwnerController');
 Route::resource('/rent','RentController');
 
-Route::get('/edit', function () {
-    return view('owner/edit');
-});
-
-Route::get('/rent', function () {
-    return view('owner/rent');
-});
 
 
 /////////backend/////////////
