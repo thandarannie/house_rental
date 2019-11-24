@@ -9,7 +9,7 @@ Route::resource('/owner','OwnerController');
 
 Route::resource('/township','TownController');
 
-Route::get('/', 'HomeController@index')->name('home');
+/*Route::get('/', 'HomeController@index')->name('home');*/
 
 Route::get('/about', function () {
     return view('frontend/about');
@@ -27,10 +27,14 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
-Route::resource('/rent','RentController');
 
 
-Route::resource('/user','UserController');
+//Route::resource('/owner','HouseController');
+
+Route::get('/rent', function () {
+    return view('owner/rent');
+});
+
 
 /////////backend/////////////
 

@@ -1,7 +1,7 @@
 @extends('template')
   @section('content')
 
- <div class="hero-wrap" style="background-image: url('{{asset('frontend/images/h2.jpeg')}}');" data-stellar-background-ratio="0.5">
+ <div class="hero-wrap" style="background-image: url('{{asset('frontend/images/h15.jpg')}}');" data-stellar-background-ratio="0.5">
   <!-- <div class="overlay"></div>
   <div class="overlay-2"></div> -->
   <div class="container">
@@ -32,6 +32,7 @@
         <div class="col-md-4">
             <div class="property-wrap ftco-animate">
                 <div class="img d-flex align-items-center justify-content-center" style="background-image: url('{{asset($house->image)}}');">
+                    
                     <a href="{{route('owner.show',$house->id)}}" class="icon d-flex align-items-center justify-content-center btn-custom">
                         <span class="ion-ios-link"></span>
 
