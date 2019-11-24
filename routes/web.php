@@ -3,6 +3,12 @@
 
 
 //house rental home page
+Route::resource('/','OwnerController');
+Route::resource('/owner','OwnerController');
+//Route::resource('/create','OwnerController@create');
+
+Route::resource('/township','TownController');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
@@ -21,13 +27,9 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
-Route::get('/detail', function () {
-    return view('frontend/detail');
-});
 
-Route::get('/edit', function () {
-    return view('owner/edit');
-});
+
+//Route::resource('/owner','HouseController');
 
 Route::get('/rent', function () {
     return view('owner/rent');

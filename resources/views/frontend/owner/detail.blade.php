@@ -1,9 +1,9 @@
 
 @extends('template')
   @section('content')
-<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
+<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{ asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
+  <!-- <div class="overlay"></div>
+  <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
@@ -19,10 +19,27 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="property-details">
-                <div class="img rounded" style="background-image: url(frontend/images/work-1.jpg);"></div>
+                <div class="img rounded" style="background-image: url('{{asset($house->image)}}');">
+                    <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
+                </div>
+                
+                <div class="float-left d-inline-block">
+                    <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning d-inline-block">Edit</a>
+
+                    <form method="post" action="{{route('owner.destroy',$house->id)}}" onsubmit="return confirm('Are your sure want to delete?')" class="d-inline-block">
+                        @csrf
+                        @method('DELETE')
+                    <input type="submit" name="delete" value="Delete" class="btn btn-danger d-inline-block">
+                    </form>
+                    </div>
+                    
+                
+                <br>
+                <br>
+
                 <div class="text">
-                    <h2>Green Valey Home</h2>
-                    <span class="subheading">2854 Meadow View Drive, Hartford, USA</span>
+                    <h2>{{($house->title)}}</h2>
+                    <span class="subheading">{{($house->location)}}</span>
                 </div>
             </div>
         </div>
@@ -33,11 +50,11 @@
                 <div class="d-flex">
                   <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
 
-                    <li class="nav-item">
+<!--                     <li class="nav-item">
                       <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
-                      <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+                      <a class="nav-link active" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
@@ -46,7 +63,7 @@
           </div>
 
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+<!--             <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
                 <div class="row">
                     <div class="col-md-4">
                         <ul class="features">
@@ -76,9 +93,9 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+            <div class="tab-pane fade show active" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
               <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
           </div>

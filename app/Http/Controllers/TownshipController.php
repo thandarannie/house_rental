@@ -25,8 +25,8 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        $township=Township::all();
-        return view('backend.addtownship');
+        $townships=Township::all();
+        return view('owner.create',compact('townships'));
     }
 
     /**
