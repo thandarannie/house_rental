@@ -1,5 +1,7 @@
 <?php
 
+
+
 //house rental home page
 Route::get('/', 'HomeController@index')->name('home');
 
