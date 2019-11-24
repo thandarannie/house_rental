@@ -6460,7 +6460,8 @@ button.bg-dark:focus {
 
 .mb-2,
 .my-2 {
-  margin-bottom: 0.5rem !important; }
+  margin-bottom: 0.5rem !important;
+  color: #800000 }
 
 .ml-2,
 .mx-2 {
@@ -8262,7 +8263,7 @@ h1, h2, h3, h4, h5,
   height: 850px; }
   .slider-text h1 {
     font-size: 60px;
-    color: #000000;
+    color: red;
     line-height: 1.1;
     font-weight: 400; }
     .slider-text h1 span {
@@ -8359,7 +8360,7 @@ h1, h2, h3, h4, h5,
   -moz-box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33);
   box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33); }
   .request-form h2 {
-    color: #000000;
+    color: #800000;
     font-size: 22px;
     font-weight: 600; }
   .request-form p {
@@ -8638,8 +8639,8 @@ h1, h2, h3, h4, h5,
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #d4ca68;
-      color: #fff;
+      background: #800000;
+      color: white;
       font-size: 20px;
       opacity: 0;
       -moz-transition: all 0.3s ease;
@@ -8702,7 +8703,7 @@ h1, h2, h3, h4, h5,
       font-size: 16px;
       font-weight: 600; }
     .property-wrap .text p.price span.orig-price {
-      color: #d4ca68; }
+      color: #800000; }
     .property-wrap .text p.price span.old-price {
       color: rgba(0, 0, 0, 0.2);
       position: relative;
@@ -9130,7 +9131,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   padding: 7em 0;
-  background: #d4ca68;
+  background: #800000;
   color: rgba(255, 255, 255, 0.9); }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -9254,7 +9255,7 @@ textarea.form-control {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  background: #d4ca68;
+  background: #800000;
   cursor: pointer;
   position: relative;
   text-align: center;
@@ -9274,7 +9275,7 @@ textarea.form-control {
   -webkit-animation: 1.6s ease infinite wheel-up-down;
   -moz-animation: 1.6s ease infinite wheel-up-down;
   animation: 1.6s ease infinite wheel-up-down;
-  color: #fff;
+  color: white;
   font-size: 24px; }
 
 @-webkit-keyframes wheel-up-down {
@@ -9333,7 +9334,7 @@ textarea.form-control {
   font-size: 18px;
   display: inline-block;
   margin-bottom: 0;
-  color: #d4ca68;
+  color: #800000;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;

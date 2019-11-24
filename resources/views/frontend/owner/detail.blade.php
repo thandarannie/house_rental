@@ -2,8 +2,8 @@
 @extends('template')
   @section('content')
 <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{ asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
+  <!-- <div class="overlay"></div>
+  <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
@@ -23,20 +23,17 @@
                     <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
                 </div>
                 
-                <div class="col-lg-6">
-                    
+                <div class="float-left d-inline-block">
+                    <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning d-inline-block">Edit</a>
 
-                    <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning">Edit</a>
-
-                    <form method="post" action="{{route('owner.destroy',$house->id)}}" onsubmit="return confirm('Are your sure want to delete?')">
+                    <form method="post" action="{{route('owner.destroy',$house->id)}}" onsubmit="return confirm('Are your sure want to delete?')" class="d-inline-block">
                         @csrf
                         @method('DELETE')
-                    <input type="submit" name="delete" value="Delete" class="btn btn-danger">
+                    <input type="submit" name="delete" value="Delete" class="btn btn-danger d-inline-block">
                     </form>
+                    </div>
                     
-
-                    <a href="" class="btn btn-info float-right">Rent</a>
-                </div>
+                
                 <br>
                 <br>
 

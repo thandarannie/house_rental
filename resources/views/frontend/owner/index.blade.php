@@ -1,9 +1,9 @@
 @extends('template')
 @section('content')
 
-<div class="hero-wrap" style="background-image: url('frontend/images/h2.jpeg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
+<div class="hero-wrap" style="background-image: url('frontend/images/n6.jpg');" data-stellar-background-ratio="0.5">
+  <!-- <div class="overlay"></div>
+  <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text justify-content-center align-items-center">
       <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">

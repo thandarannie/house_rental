@@ -1,7 +1,7 @@
 @extends('template')
 @section('content')
 
-<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
+<!-- <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="overlay-2"></div>
   <div class="container">
@@ -11,7 +11,7 @@
     </div>
 </div>
 </div>
-</section>
+</section> -->
 
 <section class="ftco-section ftco-no-pb">
     <div class="container">
