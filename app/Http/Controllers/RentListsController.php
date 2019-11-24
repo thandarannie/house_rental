@@ -13,8 +13,8 @@ class RentListsController extends Controller
      */
     public function index()
     {
-        $house = Rent::all();
-        return view('backend.rent');
+        $houses = Rent::all();
+        return view('backend.rent',compact('houses'));
     }
 
     /**
@@ -24,7 +24,7 @@ class RentListsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

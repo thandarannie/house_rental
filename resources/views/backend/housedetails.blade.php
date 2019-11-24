@@ -26,19 +26,21 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                @foreach($houses as $house)
+
+
                                 <tr>
-                                  <td>U Hla</td>
-                                  <td>Aung Myae Thar Zan</td>
-                                  <td>Condo</td>
-                                  <td>Nice House</td>
-                                  <td>230sqft</td>
-                                  <td>550000</td>
-                                  <td>4</td>
-                                  <td>26Bst</td>
-                                  <td>A12</td>
-                                  <td>house.jpg</td>
-                                  <td>09876567</td>
-                                  <td><span class="status--process">Processed</span></td>
+                                  <td>{{$house->user->name}}</td>
+                                  <td>{{$house->township->name}}</td>
+                                  <td>{{$house->type->name}}</td>
+                                  <td>{{$house->title}}</td>
+                                  <td>{{$house->area}}</td>
+                                  <td>{{$house->price}}</td>
+                                  <td>{{$house->room}}</td>
+                                  <td>{{$house->street}}</td>
+                                  <td>{{$house->hno}}</td>
+                                  <td>{{$house->phone}}</td>
+                                  <td>{{$house->status}}</td>
                                   <td>
                                       <div class="table-data-feature">
                                          <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -53,60 +55,7 @@
                                     </div>
                                 </td>
                                 </tr>
-                                <tr>
-                                  <td>U Hla</td>
-                                  <td>Aung Myae Thar Zan</td>
-                                  <td>Condo</td>
-                                  <td>Nice House</td>
-                                  <td>230sqft</td>
-                                  <td>550000</td>
-                                  <td>4</td>
-                                  <td>26Bst</td>
-                                  <td>A12</td>
-                                  <td>house.jpg</td>
-                                  <td>09876567</td>
-                                  <td><span class="status--process">Processed</span></td>
-                                  <td>
-                                      <div class="table-data-feature">
-                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                            <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="View">
-                                            <i class="zmdi zmdi-view-dashboard"></i>
-                                        </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                            <i class="zmdi zmdi-delete"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                  <td>U Hla</td>
-                                  <td>Aung Myae Thar Zan</td>
-                                  <td>Condo</td>
-                                  <td>Nice House</td>
-                                  <td>230sqft</td>
-                                  <td>550000</td>
-                                  <td>4</td>
-                                  <td>26Bst</td>
-                                  <td>A12</td>
-                                  <td>house.jpg</td>
-                                  <td>09876567</td>
-                                  <td><span class="status--process">Processed</span></td>
-                                  <td>
-                                      <div class="table-data-feature">
-                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                            <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="View">
-                                            <i class="zmdi zmdi-view-dashboard"></i>
-                                        </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                            <i class="zmdi zmdi-delete"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                </tr>
+                                @endforeach
                               </tbody>
                           </table>
                         </div> 
