@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Rent;
 use Illuminate\Http\Request;
-use App\Township;
 
-class TownshipController extends Controller
+class RentListsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class TownshipController extends Controller
      */
     public function index()
     {
-        $township = Township::all();
-         return view('backend.townshipdetails',compact('township'));
+        $house = Rent::all();
+        return view('backend.rent');
     }
 
     /**
@@ -25,8 +24,7 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        $township=Township::all();
-        return view('backend.addtownship');
+        //
     }
 
     /**
@@ -37,10 +35,7 @@ class TownshipController extends Controller
      */
     public function store(Request $request)
     {
-        $township = new Township;
-        $township->name = request('name'); 
-         $township->save();
-        return redirect()->route('townshipdetails.index');
+        //
     }
 
     /**
@@ -51,7 +46,7 @@ class TownshipController extends Controller
      */
     public function show($id)
     {
-         
+        //
     }
 
     /**
