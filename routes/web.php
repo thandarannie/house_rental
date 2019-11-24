@@ -27,13 +27,8 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
+Route::resource('/rent','RentController');
 
-
-//Route::resource('/owner','HouseController');
-
-Route::get('/rent', function () {
-    return view('owner/rent');
-});
 
 Route::resource('/user','UserController');
 

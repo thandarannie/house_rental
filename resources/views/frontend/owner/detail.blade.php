@@ -1,6 +1,7 @@
 
 @extends('template')
   @section('content')
+
 <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('{{ asset('frontend/images/bg_1.jpg')}}');" data-stellar-background-ratio="0.5">
   <!-- <div class="overlay"></div>
   <div class="overlay-2"></div> -->
@@ -19,6 +20,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="property-details">
+          <a href="{{route('rent.index')}}" class="btn btn-primary float-right">Rent</a>
                 <div class="img rounded" style="background-image: url('{{asset($house->image)}}');">
                     <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
                 </div>
@@ -44,6 +46,7 @@
             </div>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-md-12 pills">
             <div class="bd-example bd-example-tabs">

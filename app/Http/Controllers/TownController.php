@@ -43,7 +43,6 @@ class TownController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
