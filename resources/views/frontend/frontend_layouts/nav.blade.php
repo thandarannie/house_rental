@@ -57,7 +57,7 @@
 
     @endhasrole
 
-    <a class="dropdown-item" href="{{route('user.edit',Auth::id())}}">Profile</a>
+    <a class="dropdown-item" href="{{route('user.edit',1)}}">Profile</a>
 
 
     <a class="dropdown-item" href="{{ route('logout') }}"

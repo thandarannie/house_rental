@@ -1,5 +1,7 @@
 <?php
 
+
+
 //house rental home page
 Route::get('/', function () {
     return view('frontend/index');
