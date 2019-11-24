@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Township;
 
 class TownshipController extends Controller
 {
@@ -13,7 +14,9 @@ class TownshipController extends Controller
      */
     public function index()
     {
-        //
+        
+        $township = Township::all();
+         return view('backend.townshipdetails',compact('township'));
     }
 
     /**
@@ -23,7 +26,8 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        //
+        $townships=Township::all();
+        return view('owner.create',compact('townships'));
     }
 
     /**
@@ -34,7 +38,10 @@ class TownshipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $township = new Township;
+        $township->name = request('name'); 
+         $township->save();
+        return redirect()->route('townshipdetails.index');
     }
 
     /**
@@ -45,7 +52,8 @@ class TownshipController extends Controller
      */
     public function show($id)
     {
-        //
+
+         
     }
 
     /**
@@ -56,7 +64,8 @@ class TownshipController extends Controller
      */
     public function edit($id)
     {
-        //
+        $township=Township::find($id);
+        return view('backend.edittownship',compact('township'));
     }
 
     /**
@@ -68,7 +77,23 @@ class TownshipController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+        [
+            "name"=>'required',
+
+        ]);
+
+        $town=Township::find($id);
+        $town->name=request('name');
+        $town->save();
+        return redirect()->route('townshipdetails.index');
+    }
+
+    public function delete($id)
+    {
+        $town=Township::find($id);
+        $town->delete();
+        return redirect()->route('townshipdetails.index');
     }
 
     /**
@@ -79,6 +104,6 @@ class TownshipController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
