@@ -101,6 +101,6 @@ class RegisterController extends Controller
         $user->assignRole($usertype);
         $this->guard()->login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('owner.index');
     }
 }

@@ -1,4 +1,3 @@
-
 @extends('template')
   @section('content')
 
@@ -20,11 +19,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="property-details">
-          <a href="{{route('rent.index')}}" class="btn btn-primary float-right">Rent</a>
                 <div class="img rounded" style="background-image: url('{{asset($house->image)}}');">
                     <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
                 </div>
-                
+                @hasanyrole('owner|admin')
                 <div class="float-left d-inline-block">
                     <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning d-inline-block">Edit</a>
 
@@ -34,8 +32,19 @@
                     <input type="submit" name="delete" value="Delete" class="btn btn-danger d-inline-block">
                     </form>
                     </div>
-                    
-                
+                @endhasanyrole
+
+                @guest
+                <a href="{{route('login')}}">
+                     <input type="submit" name="btnsubmit" value="Rent" class="btn btn-primary float-right">
+                </a>
+                   
+                @else
+                   <a href="{{route('rent.show',$house->id)}}">
+                        <input type="submit" name="btnsubmit" value="Rent" class="btn btn-primary float-right">
+                   </a>
+                   
+                @endguest
                 <br>
                 <br>
 

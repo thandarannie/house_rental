@@ -18,12 +18,12 @@
         <div class="row offset-1">
             <div class="col-md-12">
                 <div class="search-wrap-1 ftco-animate">
-                    <form action="{{route('rent.store')}}" class="search-property-1" method="post" enctype="multipart/form-data">
+                    <form action="{{route('rent.store')}}" class="search-property-1" method="post" enctype="multipart/form-data" value="">
                          @csrf
                         
                         <div class="row offset-3">
                             <div class="col-lg-6 align-items-end">
-                                
+                                <input type="hidden" name="house" value="{{$house->id}}">
                                 <div class="form-group">
                                     <label>FROM DATE</label>
                                     <input type="date" name="from" class="form-control">
@@ -45,7 +45,7 @@
                                     <textarea name="message" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="" value="Save" class="btn btn-primary w-25 ">
+                                    <input type="submit" name="" value="Send" class="btn btn-primary w-25 ">
                                 </div>
                                 
                             </div>   

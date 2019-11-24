@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\House;
-
+use Illuminate\Support\Facades\Auth;
+use Image;
 class OwnerController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class OwnerController extends Controller
     public function index()
     {
         $houses=House::all();
-        return view('frontend/owner.index',compact('houses'));
+        return view('frontend.owner.index',compact('houses'));
     }
 
     /**
@@ -37,7 +38,6 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
         $request ->validate([
                 "image" => 'required',
                 'image.*'=>'image|mimes:jpeg,png,jpg'
@@ -47,34 +47,37 @@ class OwnerController extends Controller
             ]);
 
 
-        if ($request-> hasfile('image')) {
+        /*if ($request-> hasfile('image')) {
                 $photo=$request->file('image');
                 $name=time().'.'.$photo->getClientOriginalExtension();
                 $photo->move(public_path().'/storage/image/',$name);
                 $photo='storage/image/'.$name;
+
             }else{
                 $photo='';
-            }
+            }*/
             //dd($photo);
 
+            if ($request->image) {
+            $file_name = time() . '.' . $request->image->getClientOriginalExtension();
+            $file_path = '/storage/image/' . $file_name;
+            $image = Image::make($request->image)->save(public_path($file_path));
+            }
+
             $house=new House();
-            $house->title = request('title');
-            $house->user_id = request('title');
-            $house->township_id = request('title');
-            $house->type_id = request('title');
+            $house->user_id =Auth::id();
+            $house->township_id = request('township');
+            $house->type_id = request('type');
             $house->title = request('title');
             $house->area = request('area');
             $house->price = request('price');
             $house->room = request('room');
-            $house->street= request('street');
-            $house->hno = request('no');
-            $house->image = $photo;
+            $house->street= request('st');
+            $house->hno = request('hno');
+            $house->image = $file_path;
             $house->phone= request('phone');
             $house->description= request('desc');
             $house->save();
-            //dd($house);
-
-
         //redirect
 
             return redirect()-> route('owner.index');

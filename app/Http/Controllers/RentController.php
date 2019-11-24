@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rent;
+use App\House;
+use Illuminate\Support\Facades\Auth;
 
 class RentController extends Controller
 {
@@ -14,8 +16,8 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rents=Rent::all();
-        return view('frontend/owner.rent');
+      /*  $rents=Rent::all();*/
+        /*return view('frontend/owner.index');*/
     }
 
     /**
@@ -25,7 +27,8 @@ class RentController extends Controller
      */
     public function create()
     {
-        //
+        /*$houses=House::all();
+        return view('')*/
     }
 
     /**
@@ -38,8 +41,8 @@ class RentController extends Controller
     {
         //dd($request);
             $rent=new Rent();
-            $rent->user_id = request('name');
-            $rent->house_id = request('name');
+            $rent->user_id = Auth::id();
+            $rent->house_id = request('house');
             $rent->from = request('from');
             $rent->to = request('to');
             $rent->address = request('address');
@@ -51,7 +54,7 @@ class RentController extends Controller
 
         //redirect
 
-            return redirect()-> route('rent.index');
+            return redirect()-> route('owner.index');
     }
 
     /**
@@ -62,7 +65,8 @@ class RentController extends Controller
      */
     public function show($id)
     {
-        //
+        $house=House::find($id);
+        return view('frontend/owner.rent',compact('house'));
     }
 
     /**

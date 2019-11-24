@@ -40,8 +40,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Location</label><br>
-                                    <textarea class="form-control w-50" name="location" >{!!$house->location!!}</textarea>
+                                    <label>Location:</label><br>
+                                    st : <input type="text" name="st" class="form-control w-25 d-inline-block" value="{!!$house->street!!}">
+                                    house.no : <input type="text" name="hno" class="form-control w-25 d-inline-block" value="{!!$house->hno!!}">
                                 </div>
                                 <div class="form-group">
                                     <label>Phone No:</label><br>
@@ -73,7 +74,7 @@
 
                                 <div class="form-group">
                                     <label>Description</label><br>
-                                    <textarea class="form-control w-50" name="desc">{!!$house->desc!!}</textarea>
+                                    <textarea class="form-control w-50" name="desc">{!!$house->description!!}</textarea>
                                 </div>
 
                                 <div class="form-group">
