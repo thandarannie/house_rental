@@ -20,9 +20,8 @@ class TownController extends Controller
 
     public function index()
     {
-         $house = House::all();
-        //datas
-        return view('backend.housedetails');
+        $houses = House::all();
+        return view('backend.housedetails',compact('houses'));
     }
 
     /**

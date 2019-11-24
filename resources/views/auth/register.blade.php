@@ -68,13 +68,13 @@
                             </div>
                         </div>
                             <!-- Radio -->
-                            <!-- <div class="form-group row">
+                            <div class="form-group row">
                                 <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
                                  <div class="col-md-6">
                                      <input type="radio" name="usertype" value="User">User
                                     <input type="radio" name="usertype" value="Owner">Owner
                                  </div>
-                            </div> -->
+                            </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

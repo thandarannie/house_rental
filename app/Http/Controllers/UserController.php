@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
-use App\Township;
 
-class TownshipController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class TownshipController extends Controller
      */
     public function index()
     {
-        $township = Township::all();
-         return view('backend.townshipdetails',compact('township'));
+        $users = User::all();
+        return view('backend.userposts',compact('users'));
     }
 
     /**
@@ -25,8 +24,7 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        $townships=Township::all();
-        return view('owner.create',compact('townships'));
+        //
     }
 
     /**
@@ -37,10 +35,7 @@ class TownshipController extends Controller
      */
     public function store(Request $request)
     {
-        $township = new Township;
-        $township->name = request('name'); 
-         $township->save();
-        return redirect()->route('townshipdetails.index');
+
     }
 
     /**
@@ -51,8 +46,7 @@ class TownshipController extends Controller
      */
     public function show($id)
     {
-
-         
+        //
     }
 
     /**
@@ -63,8 +57,9 @@ class TownshipController extends Controller
      */
     public function edit($id)
     {
-        $township=Township::find($id);
-        return view('backend.edittownship',compact('township'));
+        $user=User::find($id);
+        return view('user.editprofile'compact('user'));
+        
     }
 
     /**
@@ -78,21 +73,36 @@ class TownshipController extends Controller
     {
         $request->validate(
         [
-            "name"=>'required',
+            'profile'=>'sometimes|mimes:jpg,jpeg,png',
+            'name'=>'required|min:5',
+            'email'=>'required|email'
+
 
         ]);
 
-        $town=Township::find($id);
-        $town->name=request('name');
-        $town->save();
-        return redirect()->route('townshipdetails.index');
-    }
+        //upload
+        if($request->hasfile('profile'))
+        {
+            $photo=$request->file('profile');
+            $name=time().'.'.$photo->getClientOriginalExtension();
+            $photo->move(public_path(),$name);
+            $profile=$name;
+        }
+        else
+        {
+            $profile=request('oldprofile');
+        }
 
-    public function delete($id)
-    {
-        $town=Township::find($id);
-        $town->delete();
-        return redirect()->route('townshipdetails.index');
+        //update data
+        $user=User::find($id);
+        $user->name=request('name');
+        $user->email=request('email');
+        $user->image=$profile;
+
+        $user->save();
+
+        //Redirect
+       return redirect()->route('/');
     }
 
     /**
@@ -103,6 +113,6 @@ class TownshipController extends Controller
      */
     public function destroy($id)
     {
-        
+        //
     }
 }

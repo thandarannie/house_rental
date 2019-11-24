@@ -73,6 +73,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
             'nrc' => 'required',
+            'usertype'=>'required',
             'image' => 'required|mimes:jpeg, jpg, bmp, png'
         ]);
 
@@ -82,7 +83,6 @@ class RegisterController extends Controller
             $image = Image::make($request->image)->save(public_path($file_path));
         }
         // dd($image);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -90,7 +90,17 @@ class RegisterController extends Controller
             'nrc' => $request->nrc,
             'image' => $file_path
         ]);
+        
+        if ($request->usertype == 'User') {
+            $usertype='user';
+
+        }elseif ($request->usertype == 'Owner') {
+             $usertype='owner';
+        }
+        
+        $user->assignRole($usertype);
         $this->guard()->login($user);
-        return redirect()->route('admin');
+
+        return redirect()->route('home');
     }
 }

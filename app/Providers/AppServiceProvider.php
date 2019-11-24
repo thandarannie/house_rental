@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers;
-
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Resources\Json\Resource;
 use App\Township;

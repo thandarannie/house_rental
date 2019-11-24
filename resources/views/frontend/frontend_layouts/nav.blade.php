@@ -28,8 +28,6 @@
         <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="/agent" class="nav-link">Our Team</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-
-
         @guest 
             <!--if not login --> <!-- Middleware/Redirect --> <!-- Kernel.php -->
            <li class="nav-item">
@@ -52,11 +50,11 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     @hasrole('owner')
      
-    <a class="dropdown-item" href="{{route('post.create',Auth::id())}}">Post</a>
+    <a class="dropdown-item" href="">Post</a>
 
     @endhasrole
 
-    <a class="dropdown-item" href="{{route('user.edit',Auth::id())}}">Profile</a>
+    <a class="dropdown-item" href="{{route('user.edit',1)}}">Profile</a>
 
 
     <a class="dropdown-item" href="{{ route('logout') }}"

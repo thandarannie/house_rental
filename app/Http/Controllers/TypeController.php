@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Type;
 
 class TypeController extends Controller
 {
@@ -13,7 +14,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+         $types = Type::all();
+         return view('backend.typedetails',compact('types'));
     }
 
     /**
@@ -23,8 +25,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        $housetypes=Type::all();
-        return view('owner.create',compact('housetypes'));
+        $types=Type::all();
+        return view('backend.addtype');
     }
 
     /**
@@ -35,7 +37,10 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $type = new Type;
+        $type->name = request('name'); 
+         $type->save();
+        return redirect()->route('typedetails.index');
     }
 
     /**
@@ -57,7 +62,8 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $types=Type::find($id);
+        return view('backend.edittype',compact('types'));
     }
 
     /**
@@ -69,9 +75,24 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate(
+        [
+            "name"=>'required',
+
+        ]);
+
+        $types=Type::find($id);
+        $types->name=request('name');
+        $types->save();
+        return redirect()->route('typedetails.index');
     }
 
+    public function delete($id)
+    {
+        $type=Type::find($id);
+        $type->delete();
+        return redirect()->route('typedetails.index');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +101,6 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
+    
 }
