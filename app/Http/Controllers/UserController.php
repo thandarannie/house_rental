@@ -57,8 +57,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user=User::find($id);
-        return view('user.editprofile'compact('user'));
+       
         
     }
 
@@ -71,38 +70,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
-        [
-            'profile'=>'sometimes|mimes:jpg,jpeg,png',
-            'name'=>'required|min:5',
-            'email'=>'required|email'
-
-
-        ]);
-
-        //upload
-        if($request->hasfile('profile'))
-        {
-            $photo=$request->file('profile');
-            $name=time().'.'.$photo->getClientOriginalExtension();
-            $photo->move(public_path(),$name);
-            $profile=$name;
-        }
-        else
-        {
-            $profile=request('oldprofile');
-        }
-
-        //update data
-        $user=User::find($id);
-        $user->name=request('name');
-        $user->email=request('email');
-        $user->image=$profile;
-
-        $user->save();
-
-        //Redirect
-       return redirect()->route('/');
+        
     }
 
     /**

@@ -45,11 +45,11 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     @hasrole('owner')
      
-    <a class="dropdown-item" href="">Post</a>
+    <a class="dropdown-item" href="{{ route('owner.create',Auth::id()) }}">Create Post</a>
 
     @endhasrole
 
-    <a class="dropdown-item" href="{{route('user.edit',Auth::id())}}">Profile</a>
+    <a class="dropdown-item" href="{{route('profile.edit',Auth::id())}}">Profile</a>
 
 
     <a class="dropdown-item" href="{{ route('logout') }}"

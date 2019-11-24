@@ -17,7 +17,7 @@
         <div class="row offset-1">
             <div class="col-lg-12">
                 <div class="search-wrap-1 ftco-animate">
-                    <form action="{{route('owner.store')}}" method="post" class="search-property-1 bg-info" enctype="multipart/form-data">
+                    <form action="{{route('owner.store')}}" method="post" class="search-property-1 bg-light" enctype="multipart/form-data">
                         @csrf
                         <div class="row offset-2">
                             <div class="col-lg-6 align-items-end my-5">
@@ -33,14 +33,17 @@
                                     <label>Township:</label>
                                     <select name="township" id="" class="form-control w-50">
                                         @foreach($townships as $row)
-                                        <option value="">{{$row->name}}</option>
+                                        <option value="{{$row->id}}">{{$row->name}}</option>
+
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Location</label><br>
-                                    <textarea class="form-control w-50" name="location"></textarea>
+                                    <label>Location:</label><br>
+                                    st : <input type="text" name="st" class="form-control w-25 d-inline-block">
+                                    house.no : <input type="text" name="hno" class="form-control w-25 d-inline-block">
                                 </div>
+
                                 <div class="form-group">
                                     <label>Phone No:</label><br>
                                     <input type="text" name="phone" class="form-control w-50" >
@@ -51,9 +54,8 @@
                                     <label>HouseType:</label>
                                     <select name="type" id="" class="form-control w-50">
                                         @foreach($housetypes as $row)
-                                        <option value="">{{$row->name}}</option>
+                                        <option value="{{$row->id}}">{{$row->name}}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -3,13 +3,11 @@
 
 
 //house rental home page
-Route::resource('/','OwnerController');
+Route::get('/','OwnerController@index');
 Route::resource('/owner','OwnerController');
-//Route::resource('/create','OwnerController@create');
 
 Route::resource('/township','TownController');
 
-/*Route::get('/', 'HomeController@index')->name('home');*/
 
 Route::get('/about', function () {
     return view('frontend/about');
@@ -35,10 +33,15 @@ Route::get('/rent', function () {
     return view('owner/rent');
 });
 
+Route::resource('/profile','ProfileController');
 
 /////////backend/////////////
 
 Auth::routes();
+Route::group(['middleware' => 'role:user'], function(){
+    Route::resource('/rent','RentController');
+
+});
 
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin', 'HomeController@admin')->name('admin');
