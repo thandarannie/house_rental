@@ -33,6 +33,7 @@ Route::get('/rent', function () {
     return view('owner/rent');
 });
 
+Route::resource('/user','UserController');
 
 /////////backend/////////////
 
