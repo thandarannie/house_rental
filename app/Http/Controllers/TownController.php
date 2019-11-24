@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\House;
 use App\Township;
 
 class TownController extends Controller
@@ -12,9 +13,15 @@ class TownController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /*public function __construct()
+    {
+        $this->middleware('auth');
+    }*/
+
     public function index()
     {
-        //
+        $houses = House::all();
+        return view('backend.housedetails',compact('houses'));
     }
 
     /**
@@ -25,7 +32,7 @@ class TownController extends Controller
     public function create()
     {
         $townships=Township::all();
-        return view('owner.create',compact('townships'));
+        return view('frontend_layouts.nav',compact('townships'));
     }
 
     /**
@@ -36,7 +43,6 @@ class TownController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -47,7 +53,8 @@ class TownController extends Controller
      */
     public function show($id)
     {
-        //
+        $houses=House::where('township_id',$id)->get();
+        return view('township.index',compact('houses'));
     }
 
     /**

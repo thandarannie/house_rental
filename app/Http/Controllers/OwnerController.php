@@ -78,6 +78,7 @@ class OwnerController extends Controller
         //redirect
 
             return redirect()-> route('owner.index');
+
     }
 
     /**
@@ -88,9 +89,8 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
-        $houses =House::find($id);
-        //dd($post);
-        return view('frontend/owner.detail',compact('houses'));
+        $house=House::find($id);
+        return view('frontend/owner.detail',compact('house'));
     }
 
     /**
@@ -101,7 +101,10 @@ class OwnerController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $house=House::find($id);
+    
+        return view('frontend/owner.edit',compact('house'));
     }
 
     /**
@@ -113,7 +116,34 @@ class OwnerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->hasfile('image')){
+            $photo =$request->file('image');
+            $name=time().'.'.$photo->getClientOriginalExtension();
+            $photo->move(public_path().'/storage/image/',$name);
+            $photo='/storage/image/'.$name;
+        }
+        else{
+            $photo='';
+        }
+
+
+        $house = House::find($id);
+        $house->user_id= request('title'); 
+        $house->township_id = request('title');
+        $house->type_id = request('title');
+        $house->title = request('title');
+        $house->area= request('area'); 
+        $house->price = request('price');
+        $house->room = request('room');
+        $house->location= request('location'); 
+        $house->image = $photo;
+        $house->phone = request('phone');
+        //$house->status = request('title');
+        $house->description = request('desc');
+        //dd($house);
+        $house->save();
+
+        return redirect()->route('owner.show',$id);
     }
 
     /**
@@ -123,7 +153,10 @@ class OwnerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+
+        $house=House::find($id);
+        $house->delete();
+        return redirect()->route('owner.index');
     }
 }

@@ -1,26 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\House;
+use App\User;
 use Illuminate\Http\Request;
 
-class HouseController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    /*public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
-
     public function index()
     {
-         $house = House::all();
-        //datas
-        return view('backend.housedetails');
+        $users = User::all();
+        return view('backend.userposts',compact('users'));
     }
 
     /**
@@ -63,7 +57,9 @@ class HouseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::find($id);
+        return view('user.editprofile'compact('user'));
+        
     }
 
     /**
@@ -75,7 +71,38 @@ class HouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+        [
+            'profile'=>'sometimes|mimes:jpg,jpeg,png',
+            'name'=>'required|min:5',
+            'email'=>'required|email'
+
+
+        ]);
+
+        //upload
+        if($request->hasfile('profile'))
+        {
+            $photo=$request->file('profile');
+            $name=time().'.'.$photo->getClientOriginalExtension();
+            $photo->move(public_path(),$name);
+            $profile=$name;
+        }
+        else
+        {
+            $profile=request('oldprofile');
+        }
+
+        //update data
+        $user=User::find($id);
+        $user->name=request('name');
+        $user->email=request('email');
+        $user->image=$profile;
+
+        $user->save();
+
+        //Redirect
+       return redirect()->route('/');
     }
 
     /**

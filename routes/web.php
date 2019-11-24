@@ -1,9 +1,16 @@
 <?php
 
+
+
 //house rental home page
-/*Route::get('/', function () {
-    return view('frontend/index');
-});*/
+Route::resource('/','OwnerController');
+Route::resource('/owner','OwnerController');
+//Route::resource('/create','OwnerController@create');
+
+Route::resource('/township','TownController');
+
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/about', function () {
     return view('frontend/about');
 });
@@ -20,25 +27,24 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
-Route::resource('/','OwnerController');
-Route::resource('/owner','OwnerController');
 Route::resource('/rent','RentController');
 
 
+Route::resource('/user','UserController');
 
 /////////backend/////////////
 
 Auth::routes();
-Route::get('/admin', 'HomeController@admin')->name('admin');
-Route::resource('/rentlists', 'RentListsController');
-Route::resource('/housedetails','HouseController');
-Route::get('/userposts', function () {
-    return view('backend/userposts');
+
+Route::group(['middleware' => 'role:admin'], function(){
+    Route::get('/admin', 'HomeController@admin')->name('admin');
+
+    Route::resource('/rentlists', 'RentListsController');
+    Route::resource('/housedetails','HouseController');
+    Route::resource('/userposts','UserController');
+    Route::resource('/townshipdetails','TownshipController');
+    Route::resource('/typedetails','TypeController');
+    Route::get('/delete_type/{id}', 'TypeController@delete');
+    Route::get('/delete_township/{id}', 'TownshipController@delete');
+
 });
-Route::resource('/townshipdetails','TownshipController');
-/*Route::get('/dd', function () {
-    return view('backend/addtownship');
-});*/
-/*Route::get('/admin', function () {
-    return view('backend/index');
-});*/

@@ -26,8 +26,8 @@ class TownshipController extends Controller
      */
     public function create()
     {
-        $township=Township::all();
-        return view('backend.addtownship');
+        $townships=Township::all();
+        return view('owner.create',compact('townships'));
     }
 
     /**
@@ -52,6 +52,7 @@ class TownshipController extends Controller
      */
     public function show($id)
     {
+
          
     }
 
@@ -63,7 +64,8 @@ class TownshipController extends Controller
      */
     public function edit($id)
     {
-        //
+        $township=Township::find($id);
+        return view('backend.edittownship',compact('township'));
     }
 
     /**
@@ -75,7 +77,23 @@ class TownshipController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+        [
+            "name"=>'required',
+
+        ]);
+
+        $town=Township::find($id);
+        $town->name=request('name');
+        $town->save();
+        return redirect()->route('townshipdetails.index');
+    }
+
+    public function delete($id)
+    {
+        $town=Township::find($id);
+        $town->delete();
+        return redirect()->route('townshipdetails.index');
     }
 
     /**
@@ -86,6 +104,6 @@ class TownshipController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

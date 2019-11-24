@@ -14,19 +14,19 @@
                                 <thead>
                                     <tr>
                                         <th>Action</th>
+                                        <th>title</th>
                                         <th>name</th>
+                                        <th>email</th>
+                                        <th>phone</th>
                                         <th>request date</th>
                                         <th>from</th>
                                         <th>to</th>
-                                        <th>title</th>
-                                        <th>township</th>
-                                        <th>email</th>
-                                        <th>phone</th>
                                         <th>message</th>
                                         <th>status</th>
                                     </tr>
                                 </thead>
                                     <tbody>
+                                        @foreach($houses as $house)
                                        <tr>
                                              <td>
                                                 <div class="table-data-feature">
@@ -38,79 +38,24 @@
                                                         </button>
                                                 </div>
                                             </td>
-                                            <td>Lori Lynch</td>
+                                            <td>{{$house->house->title}}</td>
+                                            <td>{{$house->user->name}}</td>
+                                            <td>{{$house->user->email}}</td>
+                                            <td>{{$house->phone}}</td>
                                             <td>
-                                                22.11.2019
-                                            </td>
-                                            <td>
-                                                22.12.2019
-                                            </td>
-                                            <td>22.12.2020</td>
-                                            <td>House Title</td>
-                                            <td>AungMyayTharSan</td>
-                                            <td>susu@gmail.com</td>
-                                            <td>09877654</td>
-                                            <td>good house</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                             <td>
-                                                <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Confirm">
-                                                        <i class="zmdi zmdi-check"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                </div>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                22.11.2019
+                                                {{$house->created_at}}
                                             </td>
                                             <td>
-                                                22.12.2019
+                                               {{$house->from}}
                                             </td>
-                                            <td>22.12.2020</td>
-                                            <td>House Title</td>
-                                            <td>AungMyayTharSan</td>
-                                            <td>susu@gmail.com</td>
-                                            <td>09877654</td>
-                                            <td>good house</td>
+                                            <td>{{$house->to}}</td>
+                                            
+                                            <td>{{$house->message}}</td>
                                             <td>
                                                 <span class="status--process">Processed</span>
                                             </td>
                                         </tr>
-                                        <tr>
-                                             <td>
-                                                <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Confirm">
-                                                        <i class="zmdi zmdi-check"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                </div>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                22.11.2019
-                                            </td>
-                                            <td>
-                                                22.12.2019
-                                            </td>
-                                            <td>22.12.2020</td>
-                                            <td>House Title</td>
-                                            <td>AungMyayTharSan</td>
-                                            <td>susu@gmail.com</td>
-                                            <td>09877654</td>
-                                            <td>good house</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                             </table>
                             </div>
