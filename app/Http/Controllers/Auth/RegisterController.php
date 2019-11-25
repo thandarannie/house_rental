@@ -73,7 +73,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
             'nrc' => 'required',
-            'usertype'=>'required',
+           'usertype'=>'required',
             'image' => 'required|mimes:jpeg, jpg, bmp, png'
         ]);
 
@@ -90,6 +90,14 @@ class RegisterController extends Controller
             'nrc' => $request->nrc,
             'image' => $file_path
         ]);
+        /*$user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->nrc = $request->nrc;
+        $user->image = $file_path;
+        $user->save();*/
+
         
         if ($request->usertype == 'User') {
             $usertype='user';
@@ -97,6 +105,10 @@ class RegisterController extends Controller
         }elseif ($request->usertype == 'Owner') {
              $usertype='owner';
         }
+        /*else{
+
+            $usertype='admin';
+        }*/
         
         $user->assignRole($usertype);
         $this->guard()->login($user);

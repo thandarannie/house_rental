@@ -29,13 +29,6 @@
                         </div>
                         <div class="desc">
                             <h3>Thandar Tun</h3>
-
-                            
-                         
-        
-
-
-
                         </div>
                     </div>
             </div>

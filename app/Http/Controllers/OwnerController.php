@@ -40,10 +40,6 @@ class OwnerController extends Controller
     {
         $request ->validate([
                 "image" => 'required',
-                'image.*'=>'image|mimes:jpeg,png,jpg'
-                
-                
-
             ]);
 
 
@@ -129,16 +125,16 @@ class OwnerController extends Controller
             $photo='';
         }
 
-
         $house = House::find($id);
-        $house->user_id= request('title'); 
-        $house->township_id = request('title');
-        $house->type_id = request('title');
+        $house->user_id=Auth::id(); 
+        $house->township_id = request('township');
+        $house->type_id = request('type');
         $house->title = request('title');
         $house->area= request('area'); 
         $house->price = request('price');
         $house->room = request('room');
-        $house->location= request('location'); 
+        $house->street= request('st');
+        $house->hno = request('hno');
         $house->image = $photo;
         $house->phone = request('phone');
         //$house->status = request('title');
