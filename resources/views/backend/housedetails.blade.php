@@ -49,9 +49,11 @@
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="View">
                                             <i class="zmdi zmdi-view-dashboard"></i>
                                         </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                            <i class="zmdi zmdi-delete"></i>
-                                        </button>
+                                        <a href="{{url('/delete_housedetails/'.$house->id)}}" class="btn btn-danger" title="Delete">
+                                                 @csrf
+                                                 @method('DELETE')
+                                                <i class="zmdi zmdi-delete"></i>
+                                        </a>
                                     </div>
                                 </td>
                                 </tr>

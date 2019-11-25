@@ -33,4 +33,12 @@ class HomeController extends Controller
     {
         return view('frontend.index');
     }
+
+    /*public function mail()
+{
+   $name = 'Krunal';
+   Mail::to('thandarannie12@gmail.com')->send(new SendMailable($name));
+   
+   return 'Email was sent';
+}*/
 }

@@ -1,10 +1,8 @@
 <?php
 
 
-
 //house rental home page
 Route::get('/','OwnerController@index');
-Route::resource('/owner','OwnerController');
 
 Route::resource('/township','TownController');
 
@@ -31,6 +29,11 @@ Route::resource('/profile','ProfileController');
 /////////backend/////////////
 
 Auth::routes();
+
+Route::group(['middleware'=> 'role:owner'],function(){
+    Route::resource('/owner','OwnerController');
+});
+
 Route::group(['middleware' => 'role:user'], function(){
     Route::resource('/rent','RentController');
 
@@ -46,5 +49,11 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('/typedetails','TypeController');
     Route::get('/delete_type/{id}', 'TypeController@delete');
     Route::get('/delete_township/{id}', 'TownshipController@delete');
+    Route::get('/delete_housedetails/{id}','HouseController@delete');
+    Route::get('/delete_rent/{id}','RentListsController@delete');
+    Route::get('/delete_userpost/{id}','UserController@delete');
+    Route::get('/email/{email}','EmailController@index');
 
 });
+
+

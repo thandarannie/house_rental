@@ -4,7 +4,7 @@
     <div class="col-lg-10 offset-lg-1">
         <div class="row">
                             <div class="col-lg-6">
-                                <h3 class="title-5 m-b-20">Townships Details</h3>
+                                <h3 class="title-5 m-b-20">Users Details</h3>
                             </div>
         </div>
         <div class="table-responsive">
@@ -16,8 +16,7 @@
                         <th>name</th>
                         <th>email</th>
                         <th>nrc</th>
-                        <th>image</th>
-                        <th>role</th>
+                       <!--  <th>role</th> -->
                         <th>action</th>
                     </tr>
                 </thead>
@@ -29,19 +28,12 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->nrc}}</td>
-                        <td>{{$user->image}}</td>
-                        <td></td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="View">
-                                    <i class="zmdi zmdi-view-dashboard"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
+                                <a href="{{url('/delete_userpost/'.$user->id)}}" class="btn btn-danger" title="Delete">
+                                   @csrf
+                                   <i class="zmdi zmdi-delete"></i>
+                               </a>
                             </div>
                         </td>
                     </tr>

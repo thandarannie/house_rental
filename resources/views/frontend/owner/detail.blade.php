@@ -23,6 +23,7 @@
                     <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
                 </div>
                 @hasanyrole('owner|admin')
+                @if(Auth::check() && Auth::id()==$house->user_id)
                 <div class="float-left d-inline-block">
                     <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning d-inline-block">Edit</a>
 
@@ -32,6 +33,7 @@
                     <input type="submit" name="delete" value="Delete" class="btn btn-danger d-inline-block">
                     </form>
                     </div>
+                @endif
                 @endhasanyrole
 
                 @guest
@@ -75,37 +77,6 @@
           </div>
 
           <div class="tab-content" id="pills-tabContent">
-<!--             <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
-                <div class="row">
-                    <div class="col-md-4">
-                        <ul class="features">
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Lot Area: 1,250 SQ FT</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Bed Rooms: 4</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Bath Rooms: 4</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Luggage</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Garage: 2</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="features">
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Floor Area: 1,300 SQ FT</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Year Build:: 2019</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Water</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Stories: 2</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Roofing: New</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="features">
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Floor Area: 1,300 SQ FT</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Year Build:: 2019</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Water</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Stories: 2</li>
-                            <li class="check"><span class="ion-ios-checkmark-circle"></span>Roofing: New</li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="tab-pane fade show active" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>

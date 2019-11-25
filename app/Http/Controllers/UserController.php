@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Rent;
+use App\House;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -72,6 +74,19 @@ class UserController extends Controller
     {
         
     }
+    public function delete($id)
+    {
+        $user=User::find($id);
+        $user->delete();
+
+        $rent=Rent::where('user_id',$id);
+        $rent->delete();
+
+        $house=House::where('user_id',$id);
+        $house->delete();
+        return redirect()->route('userposts.index');
+    }
+
 
     /**
      * Remove the specified resource from storage.

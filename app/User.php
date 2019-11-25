@@ -6,12 +6,16 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Role;
 
 class User extends Authenticatable
 {
     use Notifiable,HasRoles;
 
-
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
+    }
     /*protected $guard_name = 'web';*/
     /**
      * The attributes that are mass assignable.

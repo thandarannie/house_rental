@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\House;
+use App\Rent;
+
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -101,6 +103,17 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function delete($id)
+    {
+        $house=House::find($id);
+        $house->delete();
+
+        $rent=Rent::where('house_id',$id);
+        $rent->delete();
+         return redirect()->route('housedetails.index');
+        
+    }
     public function destroy($id)
     {
         //

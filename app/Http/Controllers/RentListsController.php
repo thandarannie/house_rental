@@ -72,6 +72,13 @@ class RentListsController extends Controller
         //
     }
 
+    public function delete($id)
+    {
+        $rent=Rent::find($id);
+        $rent->delete();
+        return redirect()->route('rentlists.index');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
