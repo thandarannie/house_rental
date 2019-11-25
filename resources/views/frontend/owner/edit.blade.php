@@ -24,8 +24,17 @@
                         <div class="row">
                             <div class="col-lg-6 align-items-end">
                                 <div class="form-group">
-                                    <label>House Photo:</label>
-                                    <input type="file" name="image" class="form-control-file">
+                                    <!-- <label>House Photo:</label>
+                                    <input type="file" name="image" class="form-control-file"> -->
+                                    <label>Image:</label>
+                                    <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror"><br>
+                                    <img src="{{asset($house->image)}}" class="img-fluid w-50">
+                                    <input type="hidden" name="oldimg" value="{{$house->image}}">
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Title:</label>
@@ -34,9 +43,16 @@
                                 <div class="form-group">
                                     <label>Township:</label>
                                     <select name="township" id="" class="form-control w-50">
+                                        
+                                        <option value="" disabled>Choose Category</option>
                                         @foreach($townships as $row)
-                                        <option value="">{{$row->name}}</option>
-                                        @endforeach
+                                        <option value="{{$row->id}}"
+                                            @if($house->township_id ==
+                                            $row->id)
+                                            {{'selected'}}
+                                            @endif
+                                            >{{$row->name}}</option>
+                                            @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -53,9 +69,15 @@
                                 <div class="form-group">
                                     <label>HouseType:</label>
                                     <select name="type" id="" class="form-control w-50" value="">
+                                        <option value="" disabled>Choose Category</option>
                                         @foreach($housetypes as $row)
-                                        <option value="">{{$row->name}}</option>
-                                        @endforeach
+                                        <option value="{{$row->id}}"
+                                            @if($house->type_id ==
+                                            $row->id)
+                                            {{'selected'}}
+                                            @endif
+                                            >{{$row->name}}</option>
+                                            @endforeach
 
                                     </select>
                                 </div>
@@ -88,7 +110,6 @@
         </div>
     </div>
 </section>
-
 
 @endsection
 

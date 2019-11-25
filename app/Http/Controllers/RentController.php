@@ -39,6 +39,16 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
+        $request ->validate([
+                "from" =>'required|min:5',
+                "to" =>'required',
+                "address" =>'required',
+                "phone" =>'required',
+                "message" =>'required',
+                 
+
+            ]);
+
         //dd($request);
             $rent=new Rent();
             $rent->user_id = Auth::id();
