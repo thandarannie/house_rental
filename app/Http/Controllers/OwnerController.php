@@ -51,7 +51,6 @@ class OwnerController extends Controller
                 'image.*'=>'image|mimes:jpeg,png,jpg'
                 
                 
-
             ]);
 
 
@@ -137,9 +136,9 @@ class OwnerController extends Controller
             $photo='oldimg';
         }
 
-
         $house = House::find($id);
-        $house->user_id= Auth::id(); 
+
+        $house->user_id=Auth::id(); 
         $house->township_id = request('township');
         $house->type_id = request('type');
         $house->title = request('title');

@@ -6461,7 +6461,7 @@ button.bg-dark:focus {
 .mb-2,
 .my-2 {
   margin-bottom: 0.5rem !important;
-  color: #800000 }
+  color: #3FC5F0}
 
 .ml-2,
 .mx-2 {
@@ -8639,7 +8639,7 @@ h1, h2, h3, h4, h5,
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #800000;
+      background: #3FC5F0;
       color: white;
       font-size: 20px;
       opacity: 0;
@@ -9131,7 +9131,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   padding: 7em 0;
-  background: #800000;
+  background: #3FC5F0;
   color: rgba(255, 255, 255, 0.9); }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -9255,7 +9255,7 @@ textarea.form-control {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  background: #800000;
+  background: #3FC5F0;
   cursor: pointer;
   position: relative;
   text-align: center;
@@ -9334,8 +9334,8 @@ textarea.form-control {
   font-size: 18px;
   display: inline-block;
   margin-bottom: 0;
-  color: #800000;
-  font-size: 12px;
+  color: #3FC5F0;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -9351,7 +9351,7 @@ textarea.form-control {
     width: 50px;
     height: 1px;
     margin-top: -1px;
-    background: #d4ca68; }
+    background: #3FC5F0; }
   .heading-section .subheading:before {
     position: absolute;
     top: 50%;
@@ -9363,7 +9363,7 @@ textarea.form-control {
     width: 50px;
     height: 1px;
     margin-top: -1px;
-    background: #d4ca68; }
+    background: #3FC5F0; }
 
 .heading-section h2 {
   font-size: 40px;
@@ -9380,7 +9380,7 @@ textarea.form-control {
   color: #fff; }
 
 .heading-section.heading-section-white p {
-  color: rgba(255, 255, 255, 0.9); }
+  color: rgba(.heading-section.255, 255, 255, 0.9); }
 
 .img,
 .img-2,
@@ -10019,3 +10019,11 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    .form{
+      background-color: #eee;
+      padding: 20px 15px;
+      border: 3px solid #666;"
+    }
+
+ 

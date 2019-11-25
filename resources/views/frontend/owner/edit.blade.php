@@ -15,13 +15,13 @@
 
 <section class="ftco-section ftco-no-pb">
     <div class="container">
-        <div class="row offset-1">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="search-wrap-1 ftco-animate">
-                    <form action="{{route('owner.update',$house->id)}}" method="post" class="search-property-1" enctype="multipart/form-data">
+                    <form action="{{route('owner.update',$house->id)}}" method="post" class="search-property-1" enctype="multipart/form-data" style="background: linear-gradient(to top, #ffffcc 0%, #990000 100%)";>
                         @csrf
                         @method('PUT')
-                        <div class="row">
+                        <div class="row offset-2">
                             <div class="col-lg-6 align-items-end">
                                 <div class="form-group">
                                     <!-- <label>House Photo:</label>
@@ -47,13 +47,13 @@
                                         <option value="" disabled>Choose Category</option>
                                         @foreach($townships as $row)
                                         <option value="{{$row->id}}"
-                                            @if($house->township_id ==
-                                            $row->id)
+
+                                            @if($house->township_id==$row->id)
                                             {{'selected'}}
-                                            @endif
-                                            >{{$row->name}}</option>
-                                            @endforeach
-                                    </select>
+                                            @endif>
+                                            {{$row->name}}
+                                        </option>
+                                        @endforeach                      </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Location:</label><br>
@@ -72,12 +72,13 @@
                                         <option value="" disabled>Choose Category</option>
                                         @foreach($housetypes as $row)
                                         <option value="{{$row->id}}"
-                                            @if($house->type_id ==
-                                            $row->id)
+
+                                            @if($house->type_id==$row->id)
                                             {{'selected'}}
-                                            @endif
-                                            >{{$row->name}}</option>
-                                            @endforeach
+                                            @endif>
+                                            {{$row->name}}
+                                        </option>
+                                        @endforeach
 
                                     </select>
                                 </div>
@@ -98,18 +99,20 @@
                                     <label>Description</label><br>
                                     <textarea class="form-control w-50" name="desc">{!!$house->description!!}</textarea>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <input type="submit" name="update" value="Update" class="btn btn-info">
-                                </div>
-                            </div>   
                         </div>
-                    </form>
+                        <center>
+                            <div class="form-group">
+                                <input type="submit" name="btnsubmit" value="Update Data" class="btn btn-danger w-25"></div>
+                            </center>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 @endsection
 

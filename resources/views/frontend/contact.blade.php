@@ -62,7 +62,9 @@
             </form>
           </div>
           <div class="col-md-6 align-items-stretch d-flex">
-                <div id="map" class="bg-white border"></div>
+                <div id="map" class="bg-white border">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d2833.051112814766!2d96.09563892319287!3d21.96099448005458!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30cb6d0d618afde7%3A0x9b2a1e81fc171bb0!2sMyanmar%20IT%20Consulting!5e1!3m2!1sen!2smm!4v1574590562767!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
           </div>
         </div>
       </div>

@@ -1,20 +1,9 @@
 @extends('template')
 @section('content')
-<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="overlay-2"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-      <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
-        <h1 class="mb-3 bread">Post Form</h1>
-    </div>
-</div>
-</div>
-</section> 
 
 <section class="ftco-section ftco-no-pb">
     <div class="container">
-        <div class="row offset-1">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="search-wrap-1 ftco-animate">
                     <form action="{{route('owner.store')}}" method="post" class="search-property-1 bg-light" enctype="multipart/form-data">
@@ -110,7 +99,6 @@
                                     </span>
                                     @enderror
                                 </div>
-
                                 <div class="form-group">
                                     <label>Description</label><br>
                                     <textarea class="form-control w-50 @error('desc') is-invalid @enderror" name="desc"></textarea>
@@ -120,16 +108,19 @@
                                     </span>
                                     @enderror
                                 </div>
+                                <center>
+                                    <input type="submit" name="btnsubmit" value="Post Your House" class="btn w-25" style="background-color: #3FC5F0;">
 
-                                <div class="form-group">
-                                    <input type="submit" name="btnsubmit" value="Save" class="btn btn-info">
-                                </div>
-                            </div>   
+                                </center> 
+                            </div>
                         </div>
-                    </form>
+                        </form>
+                    <!-- </table> -->
                 </div>
             </div>
+
         </div>
+
     </div>
 </section>
 

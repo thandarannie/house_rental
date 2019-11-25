@@ -20,7 +20,7 @@
           </div>
         </li>
         <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
+        <!-- <li class="nav-item"><a href="/service" class="nav-link">Services</a></li> -->
         <li class="nav-item"><a href="/agent" class="nav-link">Our Team</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         @guest 
@@ -45,7 +45,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     @hasrole('owner')
      
-    <a class="dropdown-item" href="{{ route('owner.create',Auth::id()) }}">Create Post</a>
+    <a class="dropdown-item" href="{{ route('owner.create') }}">Create Post</a>
 
     @endhasrole
 

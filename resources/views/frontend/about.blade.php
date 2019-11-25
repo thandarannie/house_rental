@@ -2,7 +2,7 @@
 @section('content')
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg2.jpeg');" data-stellar-background-ratio="0.5">
   <!-- <div class="overlay"></div>
   <div class="overlay-2"></div> -->
   <div class="container">
@@ -50,15 +50,15 @@
 
           <li>You are not responsible for maintenance costs.</li>
         </ul>
-        <h3 style="font-weight: 600; font-size: 20px;">The disadvantages:</h3>
-
-        <ul>
-          <li>You may face some misunderstandings with landlord.</li>
-
-          <li>You are not allowed to make improvements and decorate the property without landlord’s approval.</li>
-
-          <li>You may not be able to renew your lease on the same or similar terms and conditions.</li>
-        </ul>
+       <!--  <h3 style="font-weight: 600; font-size: 20px;">The disadvantages:</h3>
+       
+       <ul>
+         <li>You may face some misunderstandings with landlord.</li>
+       
+         <li>You are not allowed to make improvements and decorate the property without landlord’s approval.</li>
+       
+         <li>You may not be able to renew your lease on the same or similar terms and conditions.</li>
+       </ul> -->
       </div>
 
       

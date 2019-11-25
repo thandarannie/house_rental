@@ -6,7 +6,6 @@ Route::get('/','OwnerController@index');
 
 Route::resource('/township','TownController');
 
-//Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('frontend/about');
@@ -22,6 +21,14 @@ Route::get('/agent', function () {
 
 Route::get('/contact', function () {
     return view('frontend/contact');
+});
+
+
+
+//Route::resource('/owner','HouseController');
+
+Route::get('/rent', function () {
+    return view('owner/rent');
 });
 
 Route::resource('/profile','ProfileController');
