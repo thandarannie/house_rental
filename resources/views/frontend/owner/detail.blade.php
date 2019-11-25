@@ -23,6 +23,7 @@
                     <!-- <img src="{{asset($house->image)}}" class="img-fluid"> -->
                 </div>
                 @hasanyrole('owner|admin')
+                @if(Auth::check() && Auth::id()==$house->user_id)
                 <div class="float-left d-inline-block">
                     <a href="{{route('owner.edit',$house->id)}}" class="btn btn-warning d-inline-block">Edit</a>
 
@@ -32,6 +33,7 @@
                     <input type="submit" name="delete" value="Delete" class="btn btn-danger d-inline-block">
                     </form>
                     </div>
+                    @endif
                 @endhasanyrole
 
                 @guest

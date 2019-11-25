@@ -26,23 +26,48 @@
                                 <input type="hidden" name="house" value="{{$house->id}}">
                                 <div class="form-group">
                                     <label>FROM DATE</label>
-                                    <input type="date" name="from" class="form-control">
+                                    <input type="date" name="from" class="form-control @error('from') is-invalid @enderror">
+                                    @error('from')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>TO DATE</label>
-                                    <input type="date" name="to" class="form-control">
+                                    <input type="date" name="to" class="form-control @error('to') is-invalid @enderror">
+                                    @error('to')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>ADDRESS</label>
-                                    <input type="text" name="address" class="form-control">
+                                    <input type="text" name="address" class="form-control @error('address') is-invalid @enderror">
+                                    @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>PHONE</label>
-                                    <input type="number" name="phone" class="form-control">
+                                    <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror">
+                                    @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea name="message" class="form-control"></textarea>
+                                    <textarea name="message" class="form-control @error('message') is-invalid @enderror"></textarea>
+                                    @error('message')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="" value="Send" class="btn btn-primary w-25 ">

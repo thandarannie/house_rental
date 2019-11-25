@@ -39,7 +39,15 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         $request ->validate([
+                "title" =>'required|min:5',
+                "area" =>'required',
+                "price" =>'required',
+                "room" =>'required',
+                "st" =>'required',
+                "hno" =>'required',
                 "image" => 'required',
+                "phone" =>'required',
+                "desc" =>'required',
                 'image.*'=>'image|mimes:jpeg,png,jpg'
                 
                 
@@ -126,19 +134,20 @@ class OwnerController extends Controller
             $photo='/storage/image/'.$name;
         }
         else{
-            $photo='';
+            $photo='oldimg';
         }
 
 
         $house = House::find($id);
-        $house->user_id= request('title'); 
-        $house->township_id = request('title');
-        $house->type_id = request('title');
+        $house->user_id= Auth::id(); 
+        $house->township_id = request('township');
+        $house->type_id = request('type');
         $house->title = request('title');
         $house->area= request('area'); 
         $house->price = request('price');
         $house->room = request('room');
-        $house->location= request('location'); 
+        $house->street= request('st');
+        $house->hno= request('hno'); 
         $house->image = $photo;
         $house->phone = request('phone');
         //$house->status = request('title');
