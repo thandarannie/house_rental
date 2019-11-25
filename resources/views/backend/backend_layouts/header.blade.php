@@ -124,23 +124,23 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="backend/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="{{asset(auth()->user()->image)}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">{{auth()->user()->name}}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="backend/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="{{asset(auth()->user()->image)}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">{{auth()->user()->name}}</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{auth()->user()->email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -173,4 +173,7 @@
                         </div>
                     </div>
                 </div>
+                <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none;">
+                    @csrf
+                </form>
             </header>

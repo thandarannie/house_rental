@@ -1,23 +1,16 @@
 <?php
 
-//house rental home page
-Route::get('/', function () {
-    return view('frontend/index');
-});
 
-Route::resource('/create','HouseController');
+//house rental home page
+Route::get('/','OwnerController@index');
+
+Route::resource('/township','TownController');
+
 
 Route::get('/about', function () {
     return view('frontend/about');
 });
 
-//backend
-Auth::routes();
-Route::get('/admin', 'HomeController@admin')->name('admin');
-
-/*Route::get('/admin', function () {
-    return view('backend/index');
-});*/
 Route::get('/service', function () {
     return view('frontend/service');
 });
@@ -30,14 +23,44 @@ Route::get('/contact', function () {
     return view('frontend/contact');
 });
 
-Route::get('/detail', function () {
-    return view('frontend/detail');
-});
 
-Route::get('/edit', function () {
-    return view('owner/edit');
-});
+
+//Route::resource('/owner','HouseController');
 
 Route::get('/rent', function () {
     return view('owner/rent');
 });
+
+Route::resource('/profile','ProfileController');
+
+/////////backend/////////////
+
+Auth::routes();
+
+Route::group(['middleware'=> 'role:owner'],function(){
+    Route::resource('/owner','OwnerController');
+});
+
+Route::group(['middleware' => 'role:user'], function(){
+    Route::resource('/rent','RentController');
+
+});
+
+Route::group(['middleware' => 'role:admin'], function(){
+    Route::get('/admin', 'HomeController@admin')->name('admin');
+
+    Route::resource('/rentlists', 'RentListsController');
+    Route::resource('/housedetails','HouseController');
+    Route::resource('/userposts','UserController');
+    Route::resource('/townshipdetails','TownshipController');
+    Route::resource('/typedetails','TypeController');
+    Route::get('/delete_type/{id}', 'TypeController@delete');
+    Route::get('/delete_township/{id}', 'TownshipController@delete');
+    Route::get('/delete_housedetails/{id}','HouseController@delete');
+    Route::get('/delete_rent/{id}','RentListsController@delete');
+    Route::get('/delete_userpost/{id}','UserController@delete');
+    Route::get('/email/{email}','EmailController@index');
+
+});
+
+
