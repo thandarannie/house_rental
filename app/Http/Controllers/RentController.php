@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rent;
+use App\House;
+use Illuminate\Support\Facades\Auth;
 
 class RentController extends Controller
 {
@@ -13,7 +16,8 @@ class RentController extends Controller
      */
     public function index()
     {
-        //
+      /*  $rents=Rent::all();*/
+        /*return view('frontend/owner.index');*/
     }
 
     /**
@@ -23,7 +27,8 @@ class RentController extends Controller
      */
     public function create()
     {
-        //
+        /*$houses=House::all();
+        return view('')*/
     }
 
     /**
@@ -34,7 +39,32 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request ->validate([
+                "from" =>'required|min:5',
+                "to" =>'required',
+                "address" =>'required',
+                "phone" =>'required',
+                "message" =>'required',
+                 
+
+            ]);
+
+        //dd($request);
+            $rent=new Rent();
+            $rent->user_id = Auth::id();
+            $rent->house_id = request('house');
+            $rent->from = request('from');
+            $rent->to = request('to');
+            $rent->address = request('address');
+            $rent->phone = request('phone');
+            $rent->message = request('message');
+            $rent->save();
+            //dd($house);
+
+
+        //redirect
+
+            return redirect()-> route('owner.index');
     }
 
     /**
@@ -45,7 +75,8 @@ class RentController extends Controller
      */
     public function show($id)
     {
-        //
+        $house=House::find($id);
+        return view('frontend/owner.rent',compact('house'));
     }
 
     /**

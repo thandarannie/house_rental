@@ -4,8 +4,8 @@
           
     
     <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="overlay-2"></div>
+      <!-- <div class="overlay"></div>
+      <div class="overlay-2"></div> -->
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
@@ -55,7 +55,7 @@
             <div class="media block-6 services d-block text-center">
                 <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-locked"></span></div>
               <div class="media-body py-md-4">
-                <h3>Lokced in Pricing</h3>
+                <h3>Locked in Pricing</h3>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
               </div>
             </div>      

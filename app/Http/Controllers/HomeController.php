@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -13,9 +14,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except'=>['index']]);
     }
-
     /**
      * Show the application dashboard.
      *
@@ -23,10 +23,22 @@ class HomeController extends Controller
      */
     public function admin()
     {
-        return view('backend.index');
+        if (Auth::user()->hasRole('admin')) {
+            return view('backend.index');
+        } else {
+            return redirect()->route('home');
+        }
     }
     public function index()
     {
         return view('frontend.index');
     }
+
+    /*public function mail()
+{
+   $name = 'Krunal';
+   Mail::to('thandarannie12@gmail.com')->send(new SendMailable($name));
+   
+   return 'Email was sent';
+}*/
 }

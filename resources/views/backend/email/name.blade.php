@@ -1,0 +1,3 @@
+<div>
+   Rent Success
+</div>
