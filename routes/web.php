@@ -34,11 +34,11 @@ Route::get('/rent', function () {
 Route::resource('/profile','ProfileController');
 
 /////////backend/////////////
-
+ Route::resource('/owner','OwnerController');
 Auth::routes();
 
 Route::group(['middleware'=> 'role:owner'],function(){
-    Route::resource('/owner','OwnerController');
+   
 });
 
 Route::group(['middleware' => 'role:user'], function(){
