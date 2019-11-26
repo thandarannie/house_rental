@@ -35,7 +35,7 @@
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            <img src="frontend/images/su.png" class="img-fluid" alt="Colorlib Template">
+                            
                             <a href="https://www.facebook.com/thandar.htun.315865">
                             <img src="frontend/images/thandar.png" class="img-fluid" alt="Colorlib Template">
                             </a>

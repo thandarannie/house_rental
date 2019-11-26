@@ -65,6 +65,10 @@ class OwnerController extends Controller
             }*/
             //dd($photo);
 
+
+            
+            
+
             if ($request->image) {
             $file_name = time() . '.' . $request->image->getClientOriginalExtension();
             $file_path = '/storage/image/' . $file_name;

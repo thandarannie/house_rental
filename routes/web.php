@@ -32,13 +32,13 @@ Route::get('/rent', function () {
 });
 
 Route::resource('/profile','ProfileController');
-
+ Route::resource('/owner','OwnerController');
 /////////backend/////////////
 
 Auth::routes();
 
 Route::group(['middleware'=> 'role:owner'],function(){
-    Route::resource('/owner','OwnerController');
+   
 });
 
 Route::group(['middleware' => 'role:user'], function(){
