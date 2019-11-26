@@ -36,9 +36,9 @@ Route::resource('/profile','ProfileController');
 /////////backend/////////////
 
 Auth::routes();
-
+ Route::resource('/owner','OwnerController');
 Route::group(['middleware'=> 'role:owner'],function(){
-    Route::resource('/owner','OwnerController');
+   
 });
 
 Route::group(['middleware' => 'role:user'], function(){
