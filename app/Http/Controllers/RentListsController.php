@@ -13,8 +13,8 @@ class RentListsController extends Controller
      */
     public function index()
     {
-        $houses = Rent::all();
-        return view('backend.rent',compact('houses'));
+        $rents = Rent::where('status',0)->get();
+        return view('backend.rent',compact('rents'));
     }
 
     /**

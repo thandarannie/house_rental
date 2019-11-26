@@ -15,29 +15,42 @@
                 @hasanyrole('owner|admin')
                 @if(Auth::check() && Auth::id()==$house->user_id)
                 <div class="float-left d-inline-block">
-                    <a href="{{route('owner.edit',$house->id)}}" class="btn d-inline-block" style="width: 75px;background-color: #3FC5F0;">Edit</a>
+                    <a href="{{route('owner.edit',$house->id)}}" class="btn d-inline-block" style="width:150px;background-color: #3FC5F0;font-size: 1.5em;">Edit</a>
 
                     <form method="post" action="{{route('owner.destroy',$house->id)}}" onsubmit="return confirm('Are your sure want to delete?')" class="d-inline-block">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" name="delete" value="DELETE" class="btn  d-inline-block" style="width: 75px;background-color: #3FC5F0;"> 
+                        <input type="submit" name="delete" value="DELETE" class="btn  d-inline-block" style="width: 150px;background-color: #3FC5F0;font-size: 1.5em;"> 
                     
                     </form>
                     </div>
                 @endif
                 @endhasanyrole
 
-                @guest
-                <a href="{{route('login')}}">
-                     <input type="submit" name="btnsubmit" value="Rent" class="btn btn-danger float-right" style="width: 75px;background-color: #3FC5F0;">
-                </a>
-                   
+
+
+                @hasanyrole('owner|admin')
+
                 @else
-                   <a href="{{route('rent.show',$house->id)}}">
-                        <input type="submit" name="btnsubmit" value="Rent" class="btn  float-right" style="width: 75px;background-color: #3FC5F0;">
+
+                @guest
+                <center>
+                  <a href="{{route('login')}}">
+                     <input type="submit" name="btnsubmit" value="Rent" class="btn btn-info w-25" style="font-size: 1.5em">
+                </a>
+                </center>
+                @else
+                <center>
+                  <a href="{{route('rent.show',$house->id)}}">
+                        <input type="submit" name="btnsubmit" value="Rent" class="btn btn-info w-25" style="font-size: 1.5em">
                    </a>
-                   
+                </center>
                 @endguest
+
+                @endhasanyrole
+
+
+                
                 <br>
                 <br>
 
@@ -56,7 +69,7 @@
                       <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
                   </li> -->
                   <li class="nav-item">
-                    <h1 class="mb-3 bread" style="color:#3FC5F0">Properties Details</h1>
+                    <h1 class="mb-3 bread text-dark">Properties Details</h1>
                       
                   </li>
                   
@@ -68,14 +81,16 @@
 
             <div class="tab-pane fade show active" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
               <p><div class="text">
-                <ul>
-                    <li style="color:#3FC5F0">Title : {{($house->title)}}</li>
-                    <li style="color:#3FC5F0">Price : {{($house->price)}}</li>
-                    <li style="color:#3FC5F0">Area : {{($house->area)}}</li>
-                    <li style="color:#3FC5F0">Bed Room : {{($house->room)}}</li>
-                    <li style="color:#3FC5F0">Township : {{$house->township->name}}</li>
-                    <li style="color:#3FC5F0">House Type : {{$house->type->name}}</li>
-                    <li style="color:#3FC5F0">Description : {{$house->description}}</li>
+                {{$house->created_at->toFormattedDateString()}} by
+            <a href="#">{{$house->user->name}}</a>
+                <ul class="text-dark" style="font-size:1.5em;">
+                    <li >Title : {{($house->title)}}</li>
+                    <li >Price : {{($house->price)}} MMK</li>
+                    <li>Area : {{($house->area)}}</li>
+                    <li>Bed Room : {{($house->room)}}</li>
+                    <li>Township : {{$house->township->name}}</li>
+                    <li>House Type : {{$house->type->name}}</li>
+                    <li>Description : {{$house->description}}</li>
                   </div></p>
                 </ul>
               </div>

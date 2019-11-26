@@ -15,7 +15,7 @@
                 </script>
                @endif
                <div class="table-responsive">
-                <table class="table bg-light">
+                <table class="table bg-light ">
                     <thead>
                         <tr>
                             <th>Action</th>
@@ -27,40 +27,36 @@
                             <th>from</th>
                             <th>to</th>
                             <th>message</th>
-                            <th>status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($houses as $house)
+                        @foreach($rents as $rent)
                         <tr>
                            <td>
                             <div class="table-data-feature">
-                                <a href="{{url('/email/'.$house->user->email)}}" class="btn btn-success" title="Confirm">
+                                <a href="{{url('/email/'.$rent->user->email . '/' . $rent->house->id . '/' . $rent->id)}}" class="btn btn-success" title="Confirm">
                                    @csrf
                                   <i class="zmdi zmdi-check"></i>
                                </a>&nbsp;&nbsp;
-                                <a href="{{url('/delete_rent/'.$house->id)}}" class="btn btn-danger" title="Delete">
+                                <a href="{{url('/delete_rent/'.$rent->id)}}" class="btn btn-danger" title="Delete">
                                    @csrf
                                    <i class="zmdi zmdi-delete"></i>
                                </a>
                            </div>
                        </td>
-                       <td>{{$house->house->title}}</td>
-                       <td>{{$house->user->name}}</td>
-                       <td>{{$house->user->email}}</td>
-                       <td>{{$house->phone}}</td>
+                       <td>{{$rent->house->title}}</td>
+                       <td>{{$rent->user->name}}</td>
+                       <td>{{$rent->user->email}}</td>
+                       <td>{{$rent->phone}}</td>
                        <td>
-                        {{$house->created_at}}
+                        {{$rent->created_at}}
                     </td>
                     <td>
-                     {{$house->from}}
+                     {{$rent->from}}
                  </td>
-                 <td>{{$house->to}}</td>
+                 <td>{{$rent->to}}</td>
                  
-                 <td>{{$house->message}}</td>
-                 <td>
-                    <span class="status--process">Processed</span>
-                </td>
+                 <td>{{$rent->message}}</td>
             </tr>
             @endforeach
         </tbody>

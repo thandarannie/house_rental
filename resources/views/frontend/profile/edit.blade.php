@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" name="btnsubmit" class="btn btn-primary" value="Update">
-                    <a href="{{route('owner.index')}}" class="btn btn-danger">Cancel</a>
+                    <input type="submit" name="btnsubmit" class="btn btn-info" value="Update">
+                    <a href="{{route('owner.index')}}" class="btn btn-info">Cancel</a>
                     
                 </div>
                  

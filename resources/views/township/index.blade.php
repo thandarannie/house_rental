@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-            <span class="subheading">For Sale</span>
-            <h2 class="mb-2">Properties for Sale in Mandalay Region</h2>
+            <span class="subheading">For Rent</span>
+            <h2 class="mb-2">Properties for Rent in Mandalay Region</h2>
         </div>
     </div>
 
@@ -47,8 +47,6 @@
                     </div>
                                     </div>
                                     <div class="text">
-                    <p class="price mb-3">
-                        <span class="orig-price">{{($house->price)}}<small></small></span></p>
                     <h3 class="mb-0"><a href="properties-single.html">{{$house->title}}</a></h3>
                     <span class="location d-inline-block mb-3"><i class="ion-ios-pin mr-2"></i>
                         {{$house->township->name}}

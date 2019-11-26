@@ -59,6 +59,8 @@ class RentController extends Controller
             $rent->phone = request('phone');
             $rent->message = request('message');
             $rent->save();
+
+            
             //dd($house);
 
 
