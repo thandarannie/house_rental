@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8',
             'nrc' => 'required',
            'usertype'=>'required',
-            'image' => 'required|mimes:jpeg, jpg, bmp, png'
+            'image' => 'required|mimes:jpeg,jpg,png'
         ]);
 
         if ($request->image) {

@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 use App\Mail\SendMailable;
 use Illuminate\Http\Request;
+use App\House;
+use App\Rent;
 use Illuminate\Support\Facades\Mail;
 
 class EmailController extends Controller
 {
-    public function index($email)
+    public function index($email,$house_id,$rent_id)
     {
+        $house = House::find($house_id);
+        $house->status = 1;
+        $house->save();
+
+        $rent=Rent::find($rent_id);
+        $rent->status=1;
+        $rent->save();
+
         Mail::to($email)->send(new SendMailable());
+
         return redirect()->route('rentlists.index')
-                         ->with('status','Email Successfully Send');
+        ->with('status','Email Successfully Send');
     }
 
 }

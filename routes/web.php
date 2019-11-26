@@ -34,11 +34,11 @@ Route::get('/rent', function () {
 Route::resource('/profile','ProfileController');
 
 /////////backend/////////////
-
+Route::resource('/owner','OwnerController');
 Auth::routes();
 
 Route::group(['middleware'=> 'role:owner'],function(){
-    Route::resource('/owner','OwnerController');
+    
 });
 
 Route::group(['middleware' => 'role:user'], function(){
@@ -59,7 +59,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/delete_housedetails/{id}','HouseController@delete');
     Route::get('/delete_rent/{id}','RentListsController@delete');
     Route::get('/delete_userpost/{id}','UserController@delete');
-    Route::get('/email/{email}','EmailController@index');
+    Route::get('/email/{email}/{house_id}/{rent_id}','EmailController@index');
 
 });
 
