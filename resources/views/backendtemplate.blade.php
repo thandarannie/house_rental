@@ -41,8 +41,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="{{asset('backend/images/icon/logo.png')}}" alt="CoolAdmin" />
+                        <a class="logo" href="#">
+                            <img src="{{asset('backend/images/icon/logo.png')}}" alt="HouseRentalMandalay" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -52,6 +52,37 @@
                     </div>
                 </div>
             </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a class="js-arrow" href="/admin">
+                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="{{route('rentlists.index')}}">
+                                <i class="fas fa-chart-bar"></i>Rents Lists</a>
+                        </li>
+                        <li>
+                            <a href="{{route('housedetails.index')}}">
+                                <i class="fas fa-table"></i>House Details</a>
+                        </li>
+                        <li>
+                            <a href="/userposts">
+                                <i class="fas fa-copy"></i>User Posts</a>
+                        </li>
+                        <li>
+                            <a href="/townshipdetails">
+                                <i class="fas fa-map-marker-alt"></i>Townships Details</a>
+                        </li>
+                        <li>
+                            <a href="/typedetails">
+                                <i class="fas fa-text-height"></i>Types Details
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <!-- END HEADER MOBILE-->
 

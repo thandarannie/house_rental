@@ -15,7 +15,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        $houses=House::all();
+        $houses=House::where('status', 0)->get();
         return view('frontend.owner.index',compact('houses'));
     }
 
@@ -45,7 +45,7 @@ class OwnerController extends Controller
                 "room" =>'required',
                 "st" =>'required',
                 "hno" =>'required',
-                "image" => 'required',
+                "image" => 'required|mimes:jpeg,png,jpg',
                 "phone" =>'required',
                 "desc" =>'required',
                 'image.*'=>'image|mimes:jpeg,png,jpg'
