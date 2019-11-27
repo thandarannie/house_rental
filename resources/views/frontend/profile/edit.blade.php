@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-<div class="container">
+<div class="container ">
     <div class="row justify-content-center my-5">
         <div class="col-md-8">
             @php
@@ -9,7 +9,7 @@
             @endphp
 
             <form method="post" action="{{route('profile.update',$profile->id)}}" 
-                enctype="multipart/form-data">
+                enctype="multipart/form-data" class="mt-5 offset-2">
                 @csrf
                 @method('PUT')
 
