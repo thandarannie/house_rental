@@ -15,6 +15,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
+        
         $houses=House::where('status', 0)->get();
         return view('frontend.owner.index',compact('houses'));
     }

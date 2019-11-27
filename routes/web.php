@@ -59,6 +59,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/delete_rent/{id}','RentListsController@delete');
     Route::get('/delete_userpost/{id}','UserController@delete');
     Route::get('/email/{email}/{house_id}/{rent_id}','EmailController@index');
+    Route::get('/cancelemail/{email}/{rent_id}','EmailController@cancelemail');
 
 });
 
