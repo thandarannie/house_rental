@@ -17,6 +17,12 @@ class RentListsController extends Controller
         return view('backend.rent',compact('rents'));
     }
 
+    public function renthistory()
+    {
+        $renthistorys = Rent::all();
+        return view('backend.renthistory',compact('renthistorys'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

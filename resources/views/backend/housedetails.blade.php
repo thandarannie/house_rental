@@ -3,13 +3,14 @@
 <!-- MAIN CONTENT-->
 <div class="main-content">
   <div class="container-fluid">
-    <div class="col-md-12">
-      <div class="row">
+    <div class="row">
+      <div class="col-lg-10 my-5 offset-lg-1">
         <h3 class="title-5 m-b-20">House Details</h3>
         <div class="table-responsive">
-          <table class="table bg-light">
-            <thead>
+          <table class="table bg-light" style="font-size: 12px;border-radius:0.5em;">
+            <thead class="thead-dark">
               <tr>
+                <th>no.</th>
                 <th>owner</th>
                 <th>township</th>
                 <th>type</th>
@@ -24,10 +25,12 @@
               </tr>
             </thead>
             <tbody>
+              <?php 
+                  $no=1;
+               ?>
               @foreach($houses as $house)
-
-
               <tr>
+                <td>{{$no++}}</td>
                 <td>{{$house->user->name}}</td>
                 <td>{{$house->township->name}}</td>
                 <td>{{$house->type->name}}</td>

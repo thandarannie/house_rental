@@ -32,9 +32,11 @@ Route::get('/rent', function () {
 });
 
 Route::resource('/profile','ProfileController');
+Route::resource('/owner','OwnerController');
+
 
 /////////backend/////////////
-Route::resource('/owner','OwnerController');
+
 Auth::routes();
 
 Route::group(['middleware'=> 'role:owner'],function(){
@@ -48,7 +50,8 @@ Route::group(['middleware' => 'role:user'], function(){
 
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('/admin', 'HomeController@admin')->name('admin');
-
+    Route::get('/ownerlists','OwnerController@ownerlists')->name('ownerlists');
+     Route::get('/renthistory','RentListsController@renthistory')->name('renthistory');
     Route::resource('/rentlists', 'RentListsController');
     Route::resource('/housedetails','HouseController');
     Route::resource('/userposts','UserController');

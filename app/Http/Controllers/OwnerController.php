@@ -46,25 +46,10 @@ class OwnerController extends Controller
                 "st" =>'required',
                 "hno" =>'required',
                 "image" => 'required|mimes:jpeg,png,jpg',
-                "phone" =>'required',
+                "phone" =>'required|min:11',
                 "desc" =>'required',
                 'image.*'=>'image|mimes:jpeg,png,jpg'
-                
-                
             ]);
-
-
-        /*if ($request-> hasfile('image')) {
-                $photo=$request->file('image');
-                $name=time().'.'.$photo->getClientOriginalExtension();
-                $photo->move(public_path().'/storage/image/',$name);
-                $photo='storage/image/'.$name;
-
-            }else{
-                $photo='';
-            }*/
-            //dd($photo);
-
             if ($request->image) {
             $file_name = time() . '.' . $request->image->getClientOriginalExtension();
             $file_path = '/storage/image/' . $file_name;
@@ -155,6 +140,14 @@ class OwnerController extends Controller
         $house->save();
 
         return redirect()->route('owner.show',$id);
+    }
+
+    public function ownerlists()
+    {
+        $houses = House::all();
+        $renthouses=House::all()->where('status','=',1);
+        $avaliablehouses=House::all()->where('status','=',0);
+        return view('backend.ownerlists',compact('houses','renthouses','avaliablehouses'));
     }
 
     /**
