@@ -35,6 +35,7 @@
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                         <div class="img">
+                            
                             <a href="https://www.facebook.com/thandar.htun.315865">
                             <img src="frontend/images/thandar.png" class="img-fluid" alt="Colorlib Template">
                             </a>
@@ -53,7 +54,7 @@
                         </div>
                         <div class="desc">
 
-                           <h3 align="center"><a href="properties.html">Su Su Hlaing</a></h3>
+                        <h3 align="center"><a href="properties.html">Su Su Hlaing</a></h3>
                             <h3 align="center">Co-Leader</h3>
                         </div>
                     </div>
