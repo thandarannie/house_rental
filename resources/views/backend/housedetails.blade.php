@@ -40,6 +40,7 @@
                 <td>{{$house->street}}</td>
                 <td>{{$house->hno}}</td>
                 <td>{{$house->phone}}</td>
+
                 <!-- <td>{{$house->status}}</td> -->
                 <td>
                   <div class="table-data-feature">
