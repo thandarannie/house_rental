@@ -26,6 +26,26 @@
     <link rel="stylesheet" href="{{asset('frontend/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <style type="text/css">
+
+        div#back {
+          background: url(klematis.jpg) repeat;
+          
+      }
+        
+      div#back {
+          background: rgba(119, 209, 254, 0.51);
+      }
+
+        div#transbox {
+          margin: 30px;
+          background-color: #ffffff;
+          
+          opacity: 0.6;
+          filter: alpha(opacity=60);
+      }
+      
+    </style>
 </head>
 <body>
 

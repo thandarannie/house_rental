@@ -7,10 +7,10 @@
   <div class="overlay-2"></div> -->
   <div class="container">
     <div class="row no-gutters slider-text justify-content-center align-items-center">
-      <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
-        <!-- <div class="text text-center w-100">
-            <h1 class="mb-4">House Rental <br>Mandalay</h1>
-        </div> -->
+      <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end" id="back">
+        <div class="text text-center w-100" id="tranbox">
+            <h1 class="text-dark">House Rental Mandalay</h1>
+        </div>
     </div>
 </div>
 </div>

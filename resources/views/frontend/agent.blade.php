@@ -5,13 +5,13 @@
       <!-- <div class="overlay"></div>
       <div class="overlay-2"></div> -->
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-          <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
-            
-            
-          </div>
-        </div>
-      </div>
+    <div class="row no-gutters slider-text justify-content-center align-items-center">
+      <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end" id="back">
+        <div class="text text-center w-100" id="tranbox">
+            <h1 class="text-dark">Our Team(7Creators)</h1>
+    </div>
+</div>
+</div>
     </section>
 
     <section class="ftco-section ftco-agent">

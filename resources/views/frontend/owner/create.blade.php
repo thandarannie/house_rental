@@ -2,7 +2,7 @@
 @section('content')
 <section class="ftco-section ftco-no-pb">
     <div class="container">
-        <form action="{{route('owner.store')}}" method="post" novalidate="novalidate" class="my-3 " >
+        <form action="{{route('owner.store')}}" method="post" novalidate="novalidate" class="my-3 " enctype="multipart/form-data" >
             <div class="row offset-1">
 
                 <div class="col-lg-5 bg-light">
@@ -131,7 +131,7 @@
                         @enderror
                         <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span></div>
 
-                        <center><div class="form-group has-success">
+                    <center><div class="form-group has-success">
                     <input type="submit" name="btnsubmit" value="Post" class="btn btn-info text-dark w-50" style="font-size:1em;" ></div>
                 </center>
                         

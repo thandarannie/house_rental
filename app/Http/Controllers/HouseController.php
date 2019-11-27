@@ -21,7 +21,9 @@ class HouseController extends Controller
     public function index()
     {
         $houses = House::all();
-        return view('backend.housedetails',compact('houses'));
+        $renthouses=House::all()->where('status','=',1);
+        $avaliablehouses=House::all()->where('status','=',0);
+        return view('backend.housedetails',compact('houses','renthouses','avaliablehouses'));
     }
 
     /**

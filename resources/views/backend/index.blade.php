@@ -40,12 +40,12 @@
  </div>
  <div class="row">
     <div class="col-sm-6 col-lg-4">
-        <div class="overview-item overview-item--c1">
+        <div class="overview-item overview-item--c1 h-100">
             <a href="{{route('housedetails.index')}}">
                 <div class="overview__inner">
                     <div class="overview-box clearfix">
                         <div class="icon">
-                         <i class="zmdi zmdi-home zmdi-hc-fw"></i> 
+                         <i class="zmdi zmdi-home zmdi-hc-fw"></i>
                      </div>
                      <div class="text">
                         <h2>{{$total_rent_houses}}</h2>
@@ -57,7 +57,7 @@
     </div>
 </div>
 <div class="col-sm-6 col-lg-4">
-    <div class="overview-item overview-item--c3">
+    <div class="overview-item overview-item--c3 h-100">
         <a href="{{route('housedetails.index')}}">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
@@ -74,12 +74,12 @@
     </div>
 </div>
 <div class="col-sm-6 col-lg-4">
-    <div class="overview-item overview-item--c1">
+    <div class="overview-item overview-item--c1 h-100">
        <a href="/townshipdetails">
         <div class="overview__inner">
             <div class="overview-box clearfix">
                 <div class="icon">
-                 <i class="zmdi zmdi-home zmdi-hc-fw"></i> 
+                 <i class="fas fa-map-marker-alt"></i>
              </div>
              <div class="text">
                 <h2>{{$total_township}}</h2>

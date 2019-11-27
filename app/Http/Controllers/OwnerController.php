@@ -46,10 +46,10 @@ class OwnerController extends Controller
                 "room" =>'required',
                 "st" =>'required',
                 "hno" =>'required',
-                "image" => 'required|mimes:jpeg,png,jpg',
+                "image" =>'required|mimes:jpeg,png,jpg',
                 "phone" =>'required|min:11',
                 "desc" =>'required',
-                'image.*'=>'image|mimes:jpeg,png,jpg'
+                
             ]);
             if ($request->image) {
             $file_name = time() . '.' . $request->image->getClientOriginalExtension();

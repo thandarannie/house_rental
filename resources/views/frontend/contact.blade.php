@@ -5,14 +5,15 @@
     <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('frontend/images/bg2.jpeg');" data-stellar-background-ratio="0.5">
       <!-- <div class="overlay"></div>
       <div class="overlay-2"></div> -->
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-          <div class="col-md-9 ftco-animate pb-5 mb-5 text-center">
-            
-            
-          </div>
+       <div class="container">
+    <div class="row no-gutters slider-text justify-content-center align-items-center">
+      <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end" id="back">
+        <div class="text text-center w-100" id="tranbox">
+            <h1 class="text-dark">Contact Us</h1>
         </div>
-      </div>
+    </div>
+</div>
+</div>
     </section>
 
     <section class="ftco-section contact-section">
@@ -76,7 +77,7 @@
                 <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                 <a href="mailto: thandarannie12@gmail.com ?subject = Feedback&body = Message" class="btn btn-primary">Send Message</a>
+                 <a href="mailto: thandarannie12@gmail.com ?subject = Feedback&body = Message" class="btn btn-info">Send Message</a>
                 
 
 <!--                 <input type="submit" value="Send Message" class="btn btn-info py-3 px-5">

@@ -25,21 +25,8 @@
                                         <span class="email">{{auth()->user()->email}}</span>
                                     </div>
                                 </div>
-                                <div class="account-dropdown__body">
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer ">
+                                
+                                <div class="account-dropdown__footer ">
                                                 <!-- <a href="#">
                                                     <i class="zmdi zmdi-power"></i>Logout</a> -->
                                                     <a href="{{ route('logout') }}"
