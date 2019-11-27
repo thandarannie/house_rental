@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mail\SendMailable;
+use App\Mail\CancelMailable;
 use Illuminate\Http\Request;
 use App\House;
 use App\Rent;
@@ -24,5 +25,16 @@ class EmailController extends Controller
         return redirect()->route('rentlists.index')
         ->with('status','Email Successfully Send');
     }
+    public function cancelemail($email,$rent_id)
+    {
+        $rent=Rent::find($rent_id);
+        $rent->delete();
+
+        Mail::to($email)->send(new CancelMailable());
+
+        return redirect()->route('rentlists.index')
+        ->with('status','Email Successfully Send');
+    }
+    
 
 }

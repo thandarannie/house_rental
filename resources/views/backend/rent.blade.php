@@ -37,6 +37,15 @@
                                    @csrf
                                   <i class="zmdi zmdi-check"></i>
                                </a>&nbsp;&nbsp;
+
+                               <a href="{{url('/cancelemail/'.$rent->user->email. '/' . $rent->id)}}" class="btn btn-success" title="Cancel">
+                                   @csrf
+                                  <i class="fas fa-window-close"></i>
+                               </a>&nbsp;&nbsp;
+
+                               
+
+
                                 <a href="{{url('/delete_rent/'.$rent->id)}}" class="btn btn-danger" title="Delete">
                                    @csrf
                                    <i class="zmdi zmdi-delete"></i>
