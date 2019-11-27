@@ -53,7 +53,7 @@ class TownController extends Controller
      */
     public function show($id)
     {
-        $houses=House::where('township_id',$id)->get();
+        $houses=House::where('township_id',$id)->where('status', 0)->get();
         return view('township.index',compact('houses'));
     }
 

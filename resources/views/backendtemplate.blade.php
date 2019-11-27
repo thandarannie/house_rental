@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <style type="text/css">
+    </style>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,9 +43,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="#">
-                            <img src="{{asset('backend/images/icon/logo.png')}}" alt="HouseRentalMandalay" />
-                        </a>
+                       <h3>House Rental Mandalay</h3>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -57,19 +57,24 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a class="js-arrow" href="/admin">
-                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                               <i class="fas fa-home"></i>Home</a>
                         </li>
                         <li>
                             <a href="{{route('rentlists.index')}}">
-                                <i class="fas fa-chart-bar"></i>Rents Lists</a>
+                                <i class="fas fa-list-ol"></i>Rents Lists</a>
+                        </li>
+                        <li>
+                            <a href="{{route('ownerlists')}}">
+                                 <i class="fas fa-address-card"></i>Owner List
+                            </a>
                         </li>
                         <li>
                             <a href="{{route('housedetails.index')}}">
-                                <i class="fas fa-table"></i>House Details</a>
+                                <i class="far fa-clipboard"></i>House Details</a>
                         </li>
                         <li>
                             <a href="/userposts">
-                                <i class="fas fa-copy"></i>User Posts</a>
+                                <i class="fas fa-users"></i>User Posts</a>
                         </li>
                         <li>
                             <a href="/townshipdetails">
@@ -77,7 +82,12 @@
                         </li>
                         <li>
                             <a href="/typedetails">
-                                <i class="fas fa-text-height"></i>Types Details
+                              <i class="fas fa-th"></i>House Types
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('renthistory')}}">
+                              <i class="fas fa-history"></i>Rent History
                             </a>
                         </li>
                     </ul>

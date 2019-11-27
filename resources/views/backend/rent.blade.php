@@ -3,22 +3,21 @@
 <!-- MAIN CONTENT-->
 <div class="main-content">
     <div class="container-fluid">
-        <div class="col-md-12">
-            <div class="row">
-                <!-- DATA TABLE -->
-                <center>
-                   <h3 class="title-5 m-b-20">Rent Order Lists</h3>
-               </center>
+      <div class="row">
+        <div class="col-lg-10 my-5 offset-lg-1">
+            <!-- DATA TABLE -->
+              <h3 class="title-5 m-b-20">Rent Order Lists</h3>
                @if(session()->has('status'))
                 <script type="text/javascript">
                   alert('{{session()->get('status')}}');
                 </script>
                @endif
                <div class="table-responsive">
-                <table class="table bg-light ">
-                    <thead>
+                <table class="table bg-light" style="font-size: 12px;border-radius:0.5em;">
+                    <thead class="thead-dark">
                         <tr>
                             <th>Action</th>
+                            <th>Owner Name</th>
                             <th>title</th>
                             <th>name</th>
                             <th>email</th>
@@ -53,6 +52,7 @@
                                </a>
                            </div>
                        </td>
+                       <td>{{$rent->house->user->name}}</td>
                        <td>{{$rent->house->title}}</td>
                        <td>{{$rent->user->name}}</td>
                        <td>{{$rent->user->email}}</td>

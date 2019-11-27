@@ -48,8 +48,6 @@ class RentController extends Controller
                  
 
             ]);
-
-        //dd($request);
             $rent=new Rent();
             $rent->user_id = Auth::id();
             $rent->house_id = request('house');
@@ -59,11 +57,6 @@ class RentController extends Controller
             $rent->phone = request('phone');
             $rent->message = request('message');
             $rent->save();
-
-            
-            //dd($house);
-
-
         //redirect
 
             return redirect()-> route('owner.index');

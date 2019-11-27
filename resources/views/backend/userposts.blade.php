@@ -9,7 +9,7 @@
         </div>
         <div class="table-responsive">
             <table class="table bg-light my-lg-5">
-                <thead>
+                <thead class="thead-dark" style="font-size: 12px;border-radius:0.5em;">
                     <tr>
                         <th>User Id</th>
                         <th>created at</th>

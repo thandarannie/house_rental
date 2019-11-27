@@ -82,15 +82,21 @@
             <div class="tab-pane fade show active" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
               <p><div class="text">
                 {{$house->created_at->toFormattedDateString()}} by
-            <a href="#">{{$house->user->name}}</a>
-                <ul class="text-dark" style="font-size:1.5em;">
-                    <li >Title : {{($house->title)}}</li>
-                    <li >Price : {{($house->price)}} MMK</li>
-                    <li>Area : {{($house->area)}}</li>
-                    <li>Bed Room : {{($house->room)}}</li>
-                    <li>Township : {{$house->township->name}}</li>
-                    <li>House Type : {{$house->type->name}}</li>
-                    <li>Description : {{$house->description}}</li>
+            <a>{{$house->user->name}}</a>
+            <ul class="text-dark features" style="font-size:1.5em;" >
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Title : {{($house->title)}}</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Price : {{($house->price)}} MMK</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Area : {{($house->area)}}</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Bed Room : {{($house->room)}}</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Township : {{$house->township->name}}</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>House Type : {{$house->type->name}}</li>
+
+                        <li class="check"><span class="ion-ios-checkmark-circle"></span>Description : {{$house->description}}</li>
                   </div></p>
                 </ul>
               </div>

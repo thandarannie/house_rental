@@ -56,7 +56,7 @@
                         </div>
                         <div class="desc">
 
-                           <h3 align="center"><a href="properties.html">Su Su Hlaing</a></h3>
+                        <h3 align="center"><a href="properties.html">Su Su Hlaing</a></h3>
                             <h3 align="center">Co-Leader</h3>
                         </div>
                     </div>
