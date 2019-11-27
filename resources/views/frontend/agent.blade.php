@@ -15,6 +15,7 @@
     </section>
 
     <section class="ftco-section ftco-agent">
+
         <div class="container-fluid">
         <div class="row offset-3">
             <div class="col-md-3 ftco-animate">
@@ -35,7 +36,7 @@
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                         <div class="img">
-                            
+
                             <a href="https://www.facebook.com/thandar.htun.315865">
                             <img src="frontend/images/thandar.png" class="img-fluid" alt="Colorlib Template">
                             </a>
@@ -46,6 +47,7 @@
                         </div>
                 </div>
             </div>
+
 
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
@@ -60,6 +62,7 @@
                     </div>
             </div>
         </div>
+
 
         <div class="row ml-5 mr-5">
             <div class="col-md-3 ftco-animate">
@@ -82,6 +85,7 @@
                             </a>
                         </div>
                         <div class="desc">
+
                             <h3 align="center"><a href="properties.html">Win Pa Pa Theint</a></h3>
                             <h3 align="center">Member</h3>
                         </div>
@@ -102,6 +106,7 @@
             </div>
                         <div class="col-md-3 ftco-animate">
                 <div class="agent">
+
                         <div class="img"><a href="https://www.facebook.com/chinnyein.thiri">
                             <img src="frontend/images/ei.png" class="img-fluid" alt="Colorlib Template"></a>
                         </div>
@@ -111,6 +116,7 @@
                         </div>
                     </div>
             </div>
+            
         </div>
         
 
